@@ -254,7 +254,9 @@ def main():
     s.text("16 channels: U30 cells 1-6 / 12S secondary; U31 cells 7-12 / 10S secondary; U32 cells 13-16 / 4S secondary.", 25, 42)
     s.text("25mR sense gives 2A peak. With 1:1 turns and S=4..12, first-order cell transfer is below 1A; tune/verify with actual magnetics.", 25, 49)
     s.text("Only one cell channel stack-wide at a time in firmware. Charge-only policy; require closed BDU, valid sensors, no fault, and all cell temperatures <45C.", 25, 56)
-    s.text("WE 750312504 pairs: 1+2, 4+5, 6+7, 9+10 are common terminals. Not automotive-qualified; confirm permitted use and replace/approve before release.", 25, 63)
+    s.text("WE 750312504 pairs: 1+2, 4+5, 6+7, 9+10 are common terminals.", 25, 63)
+    s.text("Not cleared for transportation use: do not populate/procure without Wurth written approval for this use.", 25, 70)
+    s.text("Otherwise replace it; no footprint is assigned pending independent review.", 25, 77)
 
     tap_nets = {str(i + 1):f"BAL_TAP{i}" for i in range(17)}
     tap_nets.update({"18":"NC", "19":"NC", "20":"NC"})

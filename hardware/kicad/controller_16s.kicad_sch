@@ -7099,6 +7099,28 @@
 		)
 		(uuid "40a664be-d529-4bb7-925b-dc311147137b")
 	)
+	(text "WARNING: USB GND/shield shares pack-referenced BMS GND/VSS; this service port is not isolated."
+		(exclude_from_sim no)
+		(at 30 190 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left)
+		)
+		(uuid "0c1dabd5-c318-450b-be46-e8231a3bbc86")
+	)
+	(text "Do not connect grounded service equipment with the pack energized; use an approved isolated interface."
+		(exclude_from_sim no)
+		(at 30 197 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left)
+		)
+		(uuid "6f60f5c2-3076-47ba-baff-ae9c11477e6e")
+	)
 	(text "BDU I/O — external 12V contactors; protected smart coil switches and independent permit logic are on this board"
 		(exclude_from_sim no)
 		(at 30 215 0)

@@ -4276,7 +4276,7 @@
 		)
 		(uuid "26d19f88-67dc-4299-97d0-cc618d0a2a56")
 	)
-	(text "WE 750312504 pairs: 1+2, 4+5, 6+7, 9+10 are common terminals. Not automotive-qualified; confirm permitted use and replace/approve before release."
+	(text "WE 750312504 pairs: 1+2, 4+5, 6+7, 9+10 are common terminals."
 		(exclude_from_sim no)
 		(at 25 63 0)
 		(effects
@@ -4286,6 +4286,28 @@
 			(justify left)
 		)
 		(uuid "2d9ccdf7-0919-4d2a-a2d4-9cfba4930046")
+	)
+	(text "Not cleared for transportation use: do not populate/procure without Wurth written approval for this use."
+		(exclude_from_sim no)
+		(at 25 70 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "ed56e599-97c8-4e4c-89bb-be77cfed2014")
+	)
+	(text "Otherwise replace it; no footprint is assigned pending independent review."
+		(exclude_from_sim no)
+		(at 25 77 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "7582314c-aa4a-4e07-915e-c49fe9cd3ca5")
 	)
 	(text "Separate high-current J30 harness: pins 1-17 = BAL_TAP0..16, pins 18-20 spare. Connect taps at the cell stack; keep balance current out of the AFE sense harness/filter."
 		(exclude_from_sim no)

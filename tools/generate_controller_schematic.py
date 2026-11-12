@@ -186,6 +186,10 @@ def main():
     for prop in g.children(s.objects[-1], "property"):
         if len(prop) > 2 and prop[1] == g.atom("Datasheet"):
             prop[2] = g.atom("https://www.ti.com/lit/ds/symlink/tpd1e10b06-q1.pdf")
+    s.text("WARNING: USB GND/shield shares pack-referenced BMS GND/VSS; this service port is not isolated.",
+           30, 190, 0.8)
+    s.text("Do not connect grounded service equipment with the pack energized; use an approved isolated interface.",
+           30, 197, 0.8)
     s.add_symbol("Connector_Generic:Conn_01x02", "J7", "BOARD_NTC", 205, 250,
                  "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
                  nets={"1":"BOARD_TEMP_ADC", "2":"GND"})

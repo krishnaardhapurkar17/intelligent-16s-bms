@@ -11,6 +11,7 @@ schematic; it is not a fabricated, safety-certified, or vehicle-qualified BMS.
 |---|---|---|
 | System block diagram | `hardware/architecture.svg` | Shows the cell stack, BQ76952, ESP32-S3, I2C/ALERT, isolated CAN, host, inhibit logic, and external power stage. The CAN and low-voltage domains are architectural, not validated isolation/layout evidence. |
 | Cell-sensing inputs and filters | `hardware/kicad/afe_16s.kicad_sch`; `hardware/requirements-status.md` | Filter network is captured from the design basis. Harness protection, open-wire detection, NTC curve, and input fault behavior are not verified. |
+| Service/isolation boundary | `hardware/kicad/controller_16s.kicad_sch`; `hardware/requirements-status.md` | CAN is isolated, but USB GND/shield shares pack-referenced BMS GND/VSS. Use an approved isolated service interface or disconnect the pack before grounded service. |
 | Passive and active balancing | KiCad schematic; `models/balancing/` | Passive path and an active-balancer candidate are captured. The software active-balancing model is behavioral; component thermal, switching, and transfer claims are not validated. |
 | BDU, contactors, and precharge | `hardware/circuit-definition.md`; `software/protection/lfp_16s_protection_bdu.py` | External switching architecture and software sequencing exist. Coil/contact ratings, fuse coordination, DC-link load, and precharge values remain provisional. The state models are summarized in `docs/bdu-state-machine.md`. |
 | IMD and HVIL | `software/diagnostics/lfp_16s_insulation_monitor.py`; RTM SYS-F-019 | There is a software insulation-status abstraction, not a physical IMD circuit. No HVIL circuit or physical open-wire diagnostic proof is claimed. |
@@ -19,10 +20,10 @@ schematic; it is not a fabricated, safety-certified, or vehicle-qualified BMS.
 
 | Checklist item | Current evidence | Status / boundary |
 |---|---|---|
-| KiCad schematic ERC | `hardware/kicad/integrated_erc.txt` | 0 reported errors and warnings. The report lists ignored check classes, including SPICE-model issues. ERC is not DRC, simulation, or electrical approval. |
+| KiCad schematic ERC | `hardware/kicad/integrated_erc.txt` | 0 reported errors and warnings. Ignored checks include single-use global labels, four-point joins, footprint filters, and SPICE-model issues; review these exclusions. ERC is not DRC, simulation, or electrical approval. |
 | PCB source | `hardware/kicad/intelligent_16s_bms.kicad_pcb` | Footprints are present; routing, vias, zones, and DRC evidence are absent. PCB work is outside this revision's scope. |
 | Creepage, clearance, impedance, thermal layout | `hardware/requirements-status.md` | Not proven; no routed layout or independently reviewed stackup/constraints are available. |
-| BOM and qualification | `hardware/bom/intelligent_16s_bms_draft.csv` | Draft candidate parts only. Exact orderable variants, sourcing, datasheet review, ratings, and automotive qualification evidence remain open. |
+| BOM and qualification | `hardware/bom/intelligent_16s_bms_draft.csv`; `hardware/bom/README.md` | Integrated BOM is the current draft. Legacy page BOMs do not match the integrated design and are not for procurement. Exact orderable variants, sourcing, datasheet review, ratings, and automotive qualification evidence remain open. |
 
 ## 3. Algorithmic and control models
 

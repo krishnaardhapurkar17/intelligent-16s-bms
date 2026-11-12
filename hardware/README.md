@@ -11,6 +11,7 @@ No board is being fabricated or physically tested.
 - [Integrated ERC report](kicad/integrated_erc.txt)
 - [Integrated netlist](kicad/intelligent_16s_bms.net)
 - [Draft BOM](bom/intelligent_16s_bms_draft.csv)
+- [BOM authority and status](bom/README.md)
 - [Design checklist](requirements-status.md)
 - [Circuit definition and release gates](circuit-definition.md)
 
@@ -40,6 +41,11 @@ KiCad 10.0.6 ERC on the top-level, five-page schematic reports zero errors and
 zero warnings after regeneration. The report lists ignored check classes,
 including SPICE-model issues. ERC checks schematic rules only; it is not
 electrical design approval, circuit simulation, or DRC.
+
+The controller and active-balancer source sheets now include explicit review
+warnings. These are annotation-only changes; no connectivity was changed. The
+checked-in schematic PDF has not been regenerated and does not include those
+annotations; regenerate it in KiCad before using it as a presentation copy.
 
 The KiCad PCB file currently contains imported footprints but no routed copper,
 vias, zones, or DRC evidence. It is an unrouted placement draft, not a completed
