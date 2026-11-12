@@ -1,0 +1,66 @@
+{
+  "experiment": "seeded fault location, severity, and sensor-noise diagnostic grid",
+  "scenario_count": 339,
+  "cell_records": 5424,
+  "grid": {
+    "cells": 16,
+    "resistance_growth_fractions": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "voltage_bias_mV": [
+      10,
+      20,
+      30,
+      50
+    ],
+    "replicates_per_case": 3,
+    "voltage_noise_std_mV": 1.0,
+    "current_noise_std_A": 0.1,
+    "minimum_resistance_estimation_current_step_A": 50.0,
+    "thresholds": {
+      "voltage_deviation_mV": 15.0,
+      "resistance_ratio": 1.2
+    }
+  },
+  "voltage_only_baseline": {
+    "tp": 240,
+    "fp": 0,
+    "fn": 96,
+    "tn": 5088,
+    "precision": 1.0,
+    "recall": 0.7142857142857143,
+    "false_positive_rate": 0.0
+  },
+  "multi_signal_classifier": {
+    "tp": 287,
+    "fp": 0,
+    "fn": 49,
+    "tn": 5088,
+    "precision": 1.0,
+    "recall": 0.8541666666666666,
+    "false_positive_rate": 0.0
+  },
+  "multi_signal_by_fault_type": {
+    "resistance_growth": {
+      "fault_cell_recall": 0.9930555555555556,
+      "cause_accuracy": 0.9930555555555556,
+      "cases": 144
+    },
+    "voltage_sensor_bias": {
+      "fault_cell_recall": 0.75,
+      "cause_accuracy": 0.75,
+      "cases": 192
+    }
+  },
+  "multi_signal_fault_cause_accuracy": 0.8541666666666666,
+  "limitations": [
+    "All cases use one simplified first-order ECM and fixed pulse profile; severity and cell location are varied synthetically.",
+    "The three noise replicates are seeded simulations, not independent physical samples.",
+    "Voltage-only detection is cell-voltage deviation; multi-signal classification uses voltage and pulse-derived resistance.",
+    "Thresholds were selected before this grid but remain provisional and may not generalize to battery hardware.",
+    "No field or hardware validation is demonstrated."
+  ],
+  "status": "SIMULATION_STRESS_EVIDENCE_ONLY"
+}

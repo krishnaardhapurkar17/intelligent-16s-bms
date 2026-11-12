@@ -1,0 +1,60 @@
+{
+  "target": "cycles until first observed reference capacity at or below 80% SOH",
+  "baseline": "past-only trailing four-RPT linear SOH fade slope extrapolated to 80%",
+  "limitations": [
+    "Slope extrapolation assumes near-term linear capacity fade and can be unstable with few RPTs.",
+    "These fixed holdouts were also used to report the forest scores; do not tune on them and reuse them as final unbiased test sets.",
+    "End-of-life is observed-threshold RUL, not a prospective field-life guarantee."
+  ],
+  "whole_cell_holdout": {
+    "held_out_cells": [
+      "03",
+      "06",
+      "07",
+      "15",
+      "16",
+      "31",
+      "39",
+      "45",
+      "46",
+      "49",
+      "50",
+      "61",
+      "65"
+    ],
+    "rows": 534,
+    "usable_slope_rows": 521,
+    "missing_or_zero_slope_rows": 13,
+    "linear_soh_slope_baseline": {
+      "mae_cycles": 1918.7415918217919,
+      "rmse_cycles": 3157.3945449220287,
+      "max_absolute_error_cycles": 46542.59046147701
+    },
+    "forest_metrics": {
+      "mae": 563.8679849680033,
+      "rmse": 918.6682849038943,
+      "max_absolute_error": 4003.059369734404,
+      "r2": 0.7203824829837124
+    }
+  },
+  "whole_protocol_group_holdout": {
+    "held_out_groups": [
+      "7",
+      "9"
+    ],
+    "rows": 624,
+    "usable_slope_rows": 612,
+    "missing_or_zero_slope_rows": 12,
+    "linear_soh_slope_baseline": {
+      "mae_cycles": 2068.785765146195,
+      "rmse_cycles": 2485.6749636877435,
+      "max_absolute_error_cycles": 4771.870668963046
+    },
+    "forest_metrics": {
+      "mae": 543.3490939236069,
+      "rmse": 668.3135476716772,
+      "max_absolute_error": 1751.7474057283844,
+      "r2": 0.655270109049114
+    }
+  }
+}

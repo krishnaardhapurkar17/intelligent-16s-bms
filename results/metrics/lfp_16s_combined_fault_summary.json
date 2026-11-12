@@ -1,0 +1,83 @@
+{
+    "experiment": "16S LFP integrated multi-fault diagnosis",
+    "cell_count": 16,
+    "model_type": "Simplified first-order ECM",
+    "resistance_threshold_ratio": 1.2,
+    "voltage_deviation_threshold_mV": 15.0,
+    "temperature_deviation_threshold_C": 5.0,
+    "scenario_results": {
+        "SIM-001 Healthy pack": {
+            "flagged_cells": [],
+            "number_of_flagged_cells": 0
+        },
+        "SIM-002 Cell 8 resistance growth": {
+            "flagged_cells": [
+                {
+                    "cell": 8,
+                    "classification": "Possible resistance degradation + Voltage anomaly - cause unresolved",
+                    "localization_status": "Cell/channel localized; root cause not independently confirmed"
+                }
+            ],
+            "number_of_flagged_cells": 1
+        },
+        "SIM-003 Cell 8 voltage sensor bias": {
+            "flagged_cells": [
+                {
+                    "cell": 8,
+                    "classification": "Voltage anomaly - cause unresolved",
+                    "localization_status": "Cell/channel localized; root cause not independently confirmed"
+                }
+            ],
+            "number_of_flagged_cells": 1
+        },
+        "SIM-004 Cell 8 temperature sensor bias": {
+            "flagged_cells": [
+                {
+                    "cell": 8,
+                    "classification": "Possible temperature sensor bias",
+                    "localization_status": "Cell/channel localized; root cause not independently confirmed"
+                }
+            ],
+            "number_of_flagged_cells": 1
+        },
+        "SIM-005 Cell 8 combined faults": {
+            "flagged_cells": [
+                {
+                    "cell": 8,
+                    "classification": "Possible resistance degradation + Voltage anomaly - cause unresolved + Possible temperature sensor bias",
+                    "localization_status": "Cell/channel localized; root cause not independently confirmed"
+                }
+            ],
+            "number_of_flagged_cells": 1
+        },
+        "SIM-006 Multiple cell faults": {
+            "flagged_cells": [
+                {
+                    "cell": 8,
+                    "classification": "Possible resistance degradation + Voltage anomaly - cause unresolved",
+                    "localization_status": "Cell/channel localized; root cause not independently confirmed"
+                },
+                {
+                    "cell": 12,
+                    "classification": "Voltage anomaly - cause unresolved",
+                    "localization_status": "Cell/channel localized; root cause not independently confirmed"
+                },
+                {
+                    "cell": 14,
+                    "classification": "Possible temperature sensor bias",
+                    "localization_status": "Cell/channel localized; root cause not independently confirmed"
+                }
+            ],
+            "number_of_flagged_cells": 3
+        }
+    },
+    "limitations": [
+        "Voltage anomaly alone does not prove sensor failure.",
+        "Temperature deviation identifies an inconsistent temperature channel, not definitive sensor failure.",
+        "Resistance estimation uses idealized current transitions.",
+        "The model does not include measurement noise.",
+        "The model does not include thermal dynamics.",
+        "Thresholds are provisional and not calibrated.",
+        "Fault localization identifies the affected measurement channel, not necessarily the physical root cause."
+    ]
+}

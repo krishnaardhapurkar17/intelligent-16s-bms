@@ -1,0 +1,97 @@
+Scenario,Cell,Estimated_R0_mOhm,Pack_Median_R0_mOhm,Resistance_Ratio,Voltage_Deviation_mV,Measured_Temperature_C,Temperature_Deviation_C,Resistance_Fault,Voltage_Fault,Temperature_Sensor_Fault,Detected_Fault_Count,Classification,Localization_Status
+SIM-001 Healthy pack,1,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,2,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,3,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,4,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,5,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,6,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,7,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,8,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,9,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,10,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,11,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,12,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,13,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,14,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,15,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-001 Healthy pack,16,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,1,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,2,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,3,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,4,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,5,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,6,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,7,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,8,0.7483635333952265,0.498363533395223,1.5016418402382246,25.000000000000355,25.0,0.0,True,True,False,2,Possible resistance degradation + Voltage anomaly - cause unresolved,Cell/channel localized; root cause not independently confirmed
+SIM-002 Cell 8 resistance growth,9,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,10,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,11,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,12,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,13,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,14,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,15,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-002 Cell 8 resistance growth,16,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,1,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,2,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,3,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,4,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,5,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,6,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,7,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,8,0.498363533395223,0.498363533395223,1.0,29.999999999999805,25.0,0.0,False,True,False,1,Voltage anomaly - cause unresolved,Cell/channel localized; root cause not independently confirmed
+SIM-003 Cell 8 voltage sensor bias,9,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,10,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,11,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,12,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,13,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,14,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,15,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-003 Cell 8 voltage sensor bias,16,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,1,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,2,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,3,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,4,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,5,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,6,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,7,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,8,0.498363533395223,0.498363533395223,1.0,0.0,40.0,15.0,False,False,True,1,Possible temperature sensor bias,Cell/channel localized; root cause not independently confirmed
+SIM-004 Cell 8 temperature sensor bias,9,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,10,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,11,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,12,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,13,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,14,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,15,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-004 Cell 8 temperature sensor bias,16,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,1,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,2,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,3,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,4,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,5,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,6,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,7,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,8,0.7483635333952265,0.498363533395223,1.5016418402382246,25.000000000000355,40.0,15.0,True,True,True,3,Possible resistance degradation + Voltage anomaly - cause unresolved + Possible temperature sensor bias,Cell/channel localized; root cause not independently confirmed
+SIM-005 Cell 8 combined faults,9,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,10,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,11,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,12,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,13,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,14,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,15,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-005 Cell 8 combined faults,16,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,1,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,2,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,3,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,4,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,5,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,6,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,7,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,8,0.7483635333952265,0.498363533395223,1.5016418402382246,25.000000000000355,25.0,0.0,True,True,False,2,Possible resistance degradation + Voltage anomaly - cause unresolved,Cell/channel localized; root cause not independently confirmed
+SIM-006 Multiple cell faults,9,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,10,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,11,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,12,0.498363533395223,0.498363533395223,1.0,29.999999999999805,25.0,0.0,False,True,False,1,Voltage anomaly - cause unresolved,Cell/channel localized; root cause not independently confirmed
+SIM-006 Multiple cell faults,13,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,14,0.498363533395223,0.498363533395223,1.0,0.0,40.0,15.0,False,False,True,1,Possible temperature sensor bias,Cell/channel localized; root cause not independently confirmed
+SIM-006 Multiple cell faults,15,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized
+SIM-006 Multiple cell faults,16,0.498363533395223,0.498363533395223,1.0,0.0,25.0,0.0,False,False,False,0,No anomaly detected,No fault localized

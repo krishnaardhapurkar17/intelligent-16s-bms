@@ -1,0 +1,48 @@
+{
+  "evidence_class": "analytical R-C model verification",
+  "status": "research-only; not an approved design limit",
+  "model_boundary": "Ideal voltage source, series resistor, and DC-link capacitor. No source impedance, load, leakage, tolerance, switching transient, contactor dynamics, component model, KiCad simulation, or hardware test.",
+  "limitations": [
+    "The resistor, capacitor, source, and threshold are illustrative project assumptions.",
+    "The ideal R-C model excludes source impedance, load, leakage, tolerance, and thermal coupling.",
+    "No vendor component model, KiCad SPICE run, contactor dynamics, or physical test is included."
+  ],
+  "assumption_source": "hardware/circuit-definition.md precharge example",
+  "parameters": {
+    "pack_voltage_v": 58.4,
+    "capacitance_f": 0.002,
+    "resistance_ohm": 100.0,
+    "close_delta_v": 3.0,
+    "timeout_s": 1.0,
+    "time_step_s": 0.001,
+    "initial_bus_voltage_v": 0.0
+  },
+  "nominal_rc": {
+    "state": "CLOSED",
+    "charging_path_available": true,
+    "theoretical_close_time_s": 0.5937407202332143,
+    "simulated_close_time_s": 0.594,
+    "initial_current_a": 0.584,
+    "initial_resistor_power_w": 34.1056,
+    "resistor_energy_until_close_j": 3.4015833049534403,
+    "final_bus_voltage_v": 55.40388667661592,
+    "final_bus_delta_v": 2.9961133233840798,
+    "main_contactor_command": true
+  },
+  "blocked_precharge_path": {
+    "state": "FAULT",
+    "charging_path_available": false,
+    "theoretical_close_time_s": 0.5937407202332143,
+    "simulated_close_time_s": null,
+    "initial_current_a": 0.0,
+    "initial_resistor_power_w": 0.0,
+    "resistor_energy_until_close_j": null,
+    "final_bus_voltage_v": 0.0,
+    "final_bus_delta_v": 58.4,
+    "main_contactor_command": false
+  },
+  "checks": {
+    "nominal_reaches_close_delta_before_timeout": true,
+    "blocked_path_times_out_without_main_close": true
+  }
+}

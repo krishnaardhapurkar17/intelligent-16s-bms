@@ -1,0 +1,19 @@
+{
+    "experiment": "16S voltage sensor bias fault injection",
+    "battery_state": "Healthy baseline; no battery degradation injected",
+    "fault_type": "Voltage sensor negative bias",
+    "fault_cell": 8,
+    "injected_sensor_bias_mV": -30.0,
+    "detection_threshold_mV": 15.0,
+    "persistence_samples": 5,
+    "diagnostic_result": "VOLTAGE ANOMALY DETECTED",
+    "suspected_cell": 8,
+    "detection_time_min": 0.06666666666666667,
+    "final_cell_8_deviation_mV": 29.999999999999805,
+    "interpretation": "The voltage-only detector identifies a measurement anomaly. It cannot determine whether the cause is a sensor fault or an actual cell voltage anomaly.",
+    "limitations": [
+        "Sensor bias is injected in simulation; thresholds are provisional.",
+        "A voltage residual alone cannot distinguish sensor bias from a cell fault.",
+        "No physical cell or sensor validation is represented."
+    ]
+}

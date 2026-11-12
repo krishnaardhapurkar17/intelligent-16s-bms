@@ -1,0 +1,28 @@
+
+{
+  "model_type": "First-order Thevenin ECM",
+  "status": "Synthetic engineering assumptions - not manufacturer validated",
+  "capacity_Ah": 100.0,
+  "nominal_voltage_V": 3.2,
+  "initial_soc": 1.0,
+  "discharge_current_A": 50.0,
+  "initial_temperature_C": 25.0,
+  "cutoff_voltage_V": 2.5,
+  "R0_ohm": 0.0005,
+  "R1_ohm": 0.0002,
+  "tau_seconds": 30.0,
+  "ocv_soc_table": [
+    [0.00, 2.50],
+    [0.05, 3.00],
+    [0.10, 3.15],
+    [0.20, 3.20],
+    [0.30, 3.22],
+    [0.40, 3.23],
+    [0.50, 3.24],
+    [0.60, 3.25],
+    [0.70, 3.27],
+    [0.80, 3.30],
+    [0.90, 3.36],
+    [1.00, 3.45]
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "model_type": "CNN-LSTM",
+  "seq_len": 30,
+  "n_features": 3,
+  "features": [
+    "Voltage_norm",
+    "Current_norm",
+    "Temperature_norm"
+  ],
+  "target": "SOC (0-1)",
+  "train_cells": [
+    "NMC063",
+    "NMC068"
+  ],
+  "validation_cycles": [
+    "HWFET",
+    "LA92"
+  ],
+  "test_cell": "NMC069",
+  "test_temps": [
+    5,
+    15,
+    25,
+    35,
+    45
+  ],
+  "n_train": 174927,
+  "n_val": 46353,
+  "n_test": 117094,
+  "n_test_5deg": 21013,
+  "mae_5deg": 2.0014,
+  "rmse_5deg": 2.7107,
+  "r2_5deg": 0.9884,
+  "max_err_5deg": 12.0519,
+  "dataset": "LG INR 21700 M50LT Drive Cycle Dataset (TU Berlin)",
+  "epochs_trained": 20
+}

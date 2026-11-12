@@ -1,0 +1,46 @@
+name: Python CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-and-model-checks:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: environment/requirements-core.txt
+      - name: Install core and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r environment/requirements-core.txt -r environment/requirements-dev.txt
+      - name: Run unit tests
+        run: python -m pytest tests/unit -q
+      - name: Reproduce assumption-model studies
+        run: |
+          python tools/run_precharge_assumption_sim.py
+          python tools/run_soc_drive_cycle_experiment.py
+          python tools/run_software_fault_injection_report.py
+      - name: Upload reproducible evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulation-evidence
+          path: |
+            results/metrics/precharge_assumption_simulation.json
+            results/metrics/precharge_assumption_simulation.csv
+            results/metrics/soc_drive_cycle_initialization.json
+            results/metrics/soc_drive_cycle_initialization.csv
+            results/metrics/software_fault_injection_report.json
+            results/metrics/software_fault_injection_report.csv
+            docs/figures/precharge_assumption_waveforms.png
+            docs/figures/soc_drive_cycle_initialization.png
+          if-no-files-found: warn

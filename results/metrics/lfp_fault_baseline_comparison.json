@@ -1,0 +1,32 @@
+{
+  "sample_count": 48,
+  "ground_truth_fault_cells": 2,
+  "voltage_only_baseline": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0,
+    "tn": 46,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positive_rate": 0.0
+  },
+  "multi_signal_classifier": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0,
+    "tn": 46,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positive_rate": 0.0
+  },
+  "baseline_fault_type_correct": 1,
+  "baseline_fault_type_total": 2,
+  "fault_type_correct": 2,
+  "fault_type_total": 2,
+  "limitations": [
+    "These are three deterministic simulated scenarios, not an independent statistical holdout.",
+    "Voltage-only alarms identify anomalies but cannot distinguish resistance growth from sensor bias.",
+    "No hardware or field generalization is demonstrated."
+  ],
+  "experiment": "voltage-only baseline versus multi-signal simulated classifier"
+}

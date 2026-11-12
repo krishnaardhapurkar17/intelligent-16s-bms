@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920">
+  <defs>
+    <style>
+      .bg{fill:#f4f7fb}.box{fill:#fff;stroke:#24415f;stroke-width:3;rx:18}.title{font:700 28px Arial,sans-serif;fill:#17324d}.body{font:20px Arial,sans-serif;fill:#31475d}.small{font:17px Arial,sans-serif;fill:#536b82}.wire{stroke:#21618c;stroke-width:5;fill:none}.ctl{stroke:#45805a;stroke-width:5;fill:none}.sense{stroke:#8763a8;stroke-width:4;fill:none;stroke-dasharray:10 8}.warn{fill:#fff4e2;stroke:#bf7620;stroke-width:3;rx:14}.warntext{font:18px Arial,sans-serif;fill:#78470e}.tag{font:700 17px Arial,sans-serif;fill:#fff}.tagbox{fill:#24415f;rx:10}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#21618c"/></marker>
+    <marker id="arrowg" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#45805a"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="920"/>
+  <text x="60" y="62" class="title" style="font-size:36px">Preliminary 16S LFP BMS Hardware Architecture</text>
+  <text x="60" y="98" class="small">Preliminary system architecture — schematic/ERC evidence only; not fabricated or physically validated</text>
+
+  <rect class="box" x="60" y="180" width="270" height="230"/>
+  <text x="90" y="220" class="title">16S LFP stack</text>
+  <text x="90" y="260" class="body">Cell taps VC0–VC16</text>
+  <text x="90" y="298" class="body">Cell temperature NTCs</text>
+  <text x="90" y="336" class="body">External Kelvin shunt</text>
+  <text x="90" y="384" class="small">Pack current rating TBD</text>
+
+  <rect class="box" x="430" y="155" width="360" height="285"/>
+  <text x="465" y="200" class="title">Monitor / protector</text>
+  <text x="465" y="245" class="body">BQ76952 (3S–16S)</text>
+  <text x="465" y="282" class="body">Cell voltage • current • temp</text>
+  <text x="465" y="319" class="body">Autonomous protection</text>
+  <text x="465" y="356" class="body">Passive balance support</text>
+  <text x="465" y="403" class="small">LFP thresholds set from cell datasheet</text>
+
+  <rect class="box" x="920" y="155" width="300" height="285"/>
+  <text x="955" y="200" class="title">Local BMU</text>
+  <text x="955" y="245" class="body">ESP32-S3 controller</text>
+  <text x="955" y="282" class="body">Contactor sequence</text>
+  <text x="955" y="319" class="body">Precharge supervision</text>
+  <text x="955" y="356" class="body">AI stays advisory</text>
+  <text x="955" y="403" class="small">No direct high-current path on PCB</text>
+
+  <rect class="box" x="1330" y="180" width="220" height="230"/>
+  <text x="1360" y="220" class="title">Vehicle / host</text>
+  <text x="1360" y="260" class="body">Vehicle CAN bus</text>
+  <text x="1360" y="298" class="body">Host / gateway</text>
+  <text x="1360" y="336" class="body">Telemetry / AI</text>
+  <text x="1360" y="384" class="small">Advisory only</text>
+
+  <path class="sense" d="M330 245 H430" marker-end="url(#arrow)"/>
+  <path class="sense" d="M330 295 H430" marker-end="url(#arrow)"/>
+  <path class="sense" d="M330 345 H430" marker-end="url(#arrow)"/>
+  <text x="336" y="220" class="small">sense inputs</text>
+  <path class="wire" d="M790 270 H920" marker-end="url(#arrow)"/>
+  <text x="807" y="250" class="small">I²C + ALERT</text>
+  <path class="wire" d="M1220 275 H1330" marker-end="url(#arrow)"/>
+  <text x="1235" y="250" class="small">isolated CAN</text>
+
+  <rect class="box" x="60" y="535" width="270" height="165"/>
+  <text x="90" y="580" class="title">Auxiliary power</text>
+  <text x="90" y="620" class="body">12 V vehicle input</text>
+  <text x="90" y="660" class="body">Protected LV rails</text>
+  <path class="wire" d="M330 610 H370 V125 H1000 V155" marker-end="url(#arrow)"/>
+  <text x="610" y="117" class="small">12 V aux → regulated LV / isolated CAN supply</text>
+
+  <rect class="box" x="430" y="535" width="360" height="165"/>
+  <text x="465" y="580" class="title">Fail-safe inhibit</text>
+  <text x="465" y="620" class="body">AFE alarm gates coil enable</text>
+  <text x="465" y="660" class="body">Reset / unpowered = OFF</text>
+  <path class="ctl" d="M610 440 V535" marker-end="url(#arrowg)"/>
+  <text x="628" y="500" class="small">hardware alarm</text>
+
+  <rect class="box" x="920" y="535" width="300" height="165"/>
+  <text x="955" y="580" class="title">Contactor drivers</text>
+  <text x="955" y="620" class="body">Main + / main − coils</text>
+  <text x="955" y="660" class="body">Precharge coil command</text>
+  <path class="ctl" d="M790 615 H920" marker-end="url(#arrowg)"/>
+  <text x="805" y="592" class="small">request + inhibit</text>
+
+  <rect class="box" x="1330" y="535" width="220" height="165"/>
+  <text x="1360" y="580" class="title">External power stage</text>
+  <text x="1360" y="620" class="body">Fuse + shunt</text>
+  <text x="1360" y="660" class="body">Contactors + Rpre</text>
+  <path class="ctl" d="M1220 615 H1330" marker-end="url(#arrowg)"/>
+
+  <rect class="warn" x="60" y="760" width="1490" height="110"/>
+  <text x="90" y="802" class="warntext">Draft basis: 16S EVE LF100LA vA, 51.2 V nominal, 50 A continuous / 100 A short pulse; confirm controlled cell sheet and load profile.</text>
+  <text x="90" y="840" class="warntext">Open: final protection limits, component models, NTC curve, IMD/HVIL/open-wire design, PCB routing/DRC; no circuit or physical validation.</text>
+</svg>

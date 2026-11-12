@@ -1,0 +1,64 @@
+{
+  "dataset": "GMP LFP 40 Ah 3000-cycle dataset",
+  "source_path": "datasets\\Industrial 40 Ah LFP BMS data\\Industrial LiFePO\u2084 Battery Management System Datas\\Industrial LiFePO\u2084 Battery Management System Datas\\GMP_LFP_40Ah_3000Cycle.csv",
+  "pack_count": 1,
+  "pack_ids": [
+    1
+  ],
+  "rows": 3000,
+  "feature_contract": [
+    "cumulative_cycles",
+    "soh_pct",
+    "soh_fade_pct_per_1000_cycles"
+  ],
+  "target_definition": "RUL(cycles) through the final observed dataset cycle; the supplied target equals 3000 minus CycleNumber.",
+  "target_formula_exact_fraction": 1.0,
+  "model_metrics": {
+    "rows": 3000,
+    "mae_cycles": 546.1214821727425,
+    "rmse_cycles": 658.2778729054822,
+    "max_absolute_error_cycles": 1945.815944481008
+  },
+  "cycle_quartile_metrics": [
+    {
+      "cycle_start": 1,
+      "cycle_end": 750,
+      "rows": 750,
+      "mae_cycles": 776.7387738392656,
+      "rmse_cycles": 963.8659721667733,
+      "max_absolute_error_cycles": 1945.815944481008
+    },
+    {
+      "cycle_start": 751,
+      "cycle_end": 1500,
+      "rows": 750,
+      "mae_cycles": 563.8170144042643,
+      "rmse_cycles": 587.2915504225222,
+      "max_absolute_error_cycles": 750.2172010964819
+    },
+    {
+      "cycle_start": 1501,
+      "cycle_end": 2250,
+      "rows": 750,
+      "mae_cycles": 614.8522240021696,
+      "rmse_cycles": 616.2483850124439,
+      "max_absolute_error_cycles": 692.8400136250403
+    },
+    {
+      "cycle_start": 2251,
+      "cycle_end": 3000,
+      "rows": 750,
+      "mae_cycles": 229.0779164452708,
+      "rmse_cycles": 282.1488654925461,
+      "max_absolute_error_cycles": 545.3029678713564
+    }
+  ],
+  "limitations": [
+    "This is a separate data source and was not used to fit this model, but it contains only one pack and cannot establish between-pack generalization.",
+    "The supplied RUL labels are deterministically defined by the dataset end cycle, not independently observed per-pack end of life.",
+    "Feature extraction uses a past-only four-cycle SOH slope; pulse resistance is omitted under the selected three-feature contract.",
+    "Cell format and aging protocol differ from the 64-cell UConn RPT training domain; treat results as a distribution-shift stress test.",
+    "Model output remains research-only and must not control battery protection."
+  ],
+  "status": "RESEARCH_ONLY_EXTERNAL_SINGLE_PACK_STRESS_TEST"
+}

@@ -1,0 +1,126 @@
+{
+  "dataset": "UConn-ISU-ILCC LFP/Gr battery aging RPT",
+  "split": "whole-protocol-group holdout",
+  "seed": 20261110,
+  "training_cells": [
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "56",
+    "57",
+    "58",
+    "59",
+    "60",
+    "61",
+    "62",
+    "63",
+    "64",
+    "65"
+  ],
+  "held_out_cells": [
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "50",
+    "51",
+    "52",
+    "53",
+    "54",
+    "55"
+  ],
+  "training_rows": 2231,
+  "held_out_rows": 624,
+  "models": {
+    "soh": {
+      "features": [
+        "cumulative_cycles",
+        "pulse_resistance_ohm_mean",
+        "pulse_soc_count"
+      ],
+      "target": "soh_pct",
+      "held_out_metrics": {
+        "mae": 2.504849001783355,
+        "rmse": 3.0914348259111306,
+        "max_absolute_error": 11.92403788698553,
+        "r2": 0.6722925349808231
+      }
+    },
+    "rul": {
+      "features": [
+        "cumulative_cycles",
+        "soh_pct",
+        "soh_fade_pct_per_1000_cycles"
+      ],
+      "target": "rul_cycles_to_80pct",
+      "held_out_metrics": {
+        "mae": 543.3490939236069,
+        "rmse": 668.3135476716772,
+        "max_absolute_error": 1751.7474057283844,
+        "r2": 0.655270109049114
+      }
+    }
+  },
+  "limitations": [
+    "SOH and RUL labels derive from reference discharge capacity and observed 80% end of life.",
+    "Pulse resistance is an approximate first-sample voltage/current step estimate.",
+    "This is offline research evidence and does not authorize primary protection use."
+  ],
+  "training_groups": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "8",
+    "10",
+    "11"
+  ],
+  "held_out_groups": [
+    "7",
+    "9"
+  ],
+  "status": "RESEARCH_ONLY"
+}

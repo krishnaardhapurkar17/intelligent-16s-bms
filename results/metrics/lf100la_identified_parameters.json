@@ -1,0 +1,14 @@
+{
+    "identification_method": "R0 from pulse edge; R1 and tau from single exponential relaxation fit",
+    "data_source": "Synthetic HPPC-style ECM simulation",
+    "R0_estimated_ohm": 0.0004999999999999983,
+    "R1_estimated_ohm": 0.00019999999919367286,
+    "tau_estimated_s": 29.999999908158298,
+    "C1_estimated_F": 150000.00014553685,
+    "validated_against_physical_cell": false,
+    "limitations": [
+        "Parameters are identified from synthetic HPPC-style ECM data.",
+        "Estimates are not manufacturer specifications or physical-cell measurements.",
+        "The first-order equivalent-circuit form is an illustrative modeling assumption."
+    ]
+}

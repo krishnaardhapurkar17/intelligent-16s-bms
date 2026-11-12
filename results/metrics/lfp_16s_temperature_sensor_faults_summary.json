@@ -1,0 +1,59 @@
+{
+    "experiment": "16S LFP temperature sensor fault injection",
+    "cell_count": 16,
+    "actual_cell_temperature_C": 25.0,
+    "sample_count": 181,
+    "sample_interval_seconds": 1,
+    "healthy_sensor_noise_std_C": 0.2,
+    "faulty_sensor_noise_std_C": 2.5,
+    "positive_sensor_bias_C": 15.0,
+    "negative_sensor_bias_C": -15.0,
+    "temperature_deviation_threshold_C": 5.0,
+    "noise_std_threshold_C": 1.5,
+    "random_seed": 42,
+    "scenarios": {
+        "Healthy sensors": {
+            "cell_8_actual_temperature_C": 25.0,
+            "cell_8_measured_mean_C": 24.981737590828633,
+            "cell_8_noise_std_C": 0.2066853197356688,
+            "cell_8_temperature_deviation_C": 0.010727479607396617,
+            "bias_warning": false,
+            "noise_warning": false,
+            "classification": "No temperature sensor anomaly detected"
+        },
+        "Cell 8 positive bias": {
+            "cell_8_actual_temperature_C": 25.0,
+            "cell_8_measured_mean_C": 39.98173759082865,
+            "cell_8_noise_std_C": 0.2066853197356689,
+            "cell_8_temperature_deviation_C": 14.98462540099547,
+            "bias_warning": true,
+            "noise_warning": false,
+            "classification": "Possible temperature sensor bias"
+        },
+        "Cell 8 negative bias": {
+            "cell_8_actual_temperature_C": 25.0,
+            "cell_8_measured_mean_C": 9.981737590828633,
+            "cell_8_noise_std_C": 0.2066853197356688,
+            "cell_8_temperature_deviation_C": 15.010727479607397,
+            "bias_warning": true,
+            "noise_warning": false,
+            "classification": "Possible temperature sensor bias"
+        },
+        "Cell 8 excessive noise": {
+            "cell_8_actual_temperature_C": 25.0,
+            "cell_8_measured_mean_C": 25.23424299312219,
+            "cell_8_noise_std_C": 2.5978432708153387,
+            "cell_8_temperature_deviation_C": 0.23713080328900915,
+            "bias_warning": false,
+            "noise_warning": true,
+            "classification": "Possible excessive temperature sensor noise"
+        }
+    },
+    "limitations": [
+        "All actual cell temperatures are fixed at 25 C.",
+        "Temperature bias is identified through pack median comparison.",
+        "A real thermal anomaly and a sensor bias may be indistinguishable using temperature measurements alone.",
+        "The diagnostic thresholds are provisional.",
+        "The experiment does not model thermal dynamics."
+    ]
+}

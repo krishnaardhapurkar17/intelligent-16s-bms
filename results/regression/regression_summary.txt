@@ -1,0 +1,74 @@
+16S INTELLIGENT BMS - REGRESSION SUMMARY
+=======================================================
+Timestamp UTC: 2026-11-12T20:17:26.740124+00:00
+Total scripts: 58
+Passed: 58
+Failed: 0
+Errors: 0
+Timeouts: 0
+Missing: 0
+Blocked: 0
+Experiment artifact manifests: 37/37 stages passed; 112 expected files
+Execution time: 220.019 seconds
+Overall: PASS
+
+INDIVIDUAL RESULTS
+-------------------------------------------------------
+PASS: PMU unit tests (0.108 seconds)
+PASS: PMU-BDU integration (0.115 seconds)
+PASS: Insulation monitoring unit tests (0.098 seconds)
+PASS: IMU supervisory integration (0.738 seconds)
+PASS: Thermal management unit tests (0.092 seconds)
+PASS: TMU supervisory integration (0.623 seconds)
+PASS: Sensor safety gate (0.181 seconds)
+PASS: Battery parameter integrity (0.066 seconds)
+PASS: Interface, authorization and lifecycle contracts (0.466 seconds)
+PASS: State-of-safety summary (0.34 seconds)
+PASS: BDU operating mode state transitions (0.367 seconds)
+PASS: Passive balancing energy and interlocks (1.309 seconds)
+PASS: 16S pack baseline simulation (7.054 seconds)
+PASS: Voltage sensor bias injection (1.62 seconds)
+PASS: Noisy and missing sensor robustness (1.677 seconds)
+PASS: Temperature sensor bias and noise injection (1.349 seconds)
+PASS: Seeded 16S Monte Carlo validation (4.761 seconds)
+PASS: Monte Carlo metric audit (0.62 seconds)
+PASS: Seeded simulation reproducibility (3.617 seconds)
+PASS: 16S weak-cell capacity injection (8.487 seconds)
+PASS: Baseline voltage deviation diagnostic (3.04 seconds)
+PASS: Capacity degradation injection and estimate (4.744 seconds)
+PASS: Resistance growth injection and estimate (3.338 seconds)
+PASS: LF100LA equivalent-circuit simulation (4.324 seconds)
+PASS: LF100LA HPPC experiment (3.543 seconds)
+PASS: LF100LA combined degradation experiment (6.158 seconds)
+PASS: LF100LA parameter identification (9.546 seconds)
+PASS: Single-cell discharge model (11.161 seconds)
+PASS: Combined-fault localization and explicit unknown result (2.071 seconds)
+PASS: LFP multi-signal fault-isolation experiment (1.164 seconds)
+PASS: Voltage baseline versus multi-signal diagnostic metrics (0.537 seconds)
+PASS: Temperature variation diagnostics (1.379 seconds)
+PASS: SOC estimator scenarios and metrics (3.122 seconds)
+PASS: LFP coulomb-counting and OCV SOC fusion (1.715 seconds)
+PASS: Supplied SOC/SOH/RUL AI models and MATLAB export fidelity (7.308 seconds)
+PASS: SOH estimator scenarios and metrics (3.338 seconds)
+PASS: RUL estimator scenarios and metrics (4.247 seconds)
+PASS: State-of-power validity and derating (0.159 seconds)
+PASS: BDU independence (0.082 seconds)
+PASS: Supervisory fault injection (0.545 seconds)
+PASS: Protection BDU (0.112 seconds)
+PASS: Passive balancing (0.924 seconds)
+PASS: BDU and balancing integration (0.525 seconds)
+PASS: Sensor BDU balancing integration (0.583 seconds)
+PASS: Unified diagnostics (0.702 seconds)
+PASS: Supervisory controller (0.577 seconds)
+PASS: Generated report validation (53.771 seconds)
+PASS: Requirement evidence traceability (0.106 seconds)
+PASS: Active versus passive balancing comparison (2.815 seconds)
+PASS: Desktop AI inference resource profile (22.59 seconds)
+PASS: Complete unit test suite (9.325 seconds)
+PASS: LFP RUL slope baseline comparison (0.279 seconds)
+PASS: LFP RUL grouped cross-validation (18.624 seconds)
+PASS: Diagnostic scenario grid stress evaluation (0.608 seconds)
+PASS: LFP RUL external pack stress test (1.115 seconds)
+PASS: Precharge R-C assumption model (0.901 seconds)
+PASS: SOC drive-cycle initialization experiment (1.155 seconds)
+PASS: Software protection fault injection report (0.098 seconds)

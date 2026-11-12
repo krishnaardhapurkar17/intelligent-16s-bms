@@ -1,0 +1,79 @@
+{
+  "evidence_class": "software threshold-logic fault injection",
+  "status": "research-only; ProtectionConfig defaults are not approved limits",
+  "sample_interval_ms": 1.0,
+  "modeled_logic_latency_boundary": "Latency is one software update interval after a fault value is supplied. Sensor conversion/filtering, scheduling jitter, hardware inhibit propagation, coil current decay, and contactor opening are not modeled.",
+  "not_demonstrated": [
+    "NTC resistance-to-temperature curve or thermal response",
+    "AFE open-wire detection; invalid input is only a software quality fault",
+    "fuse, contactor, or short-circuit trip curve",
+    "physical fault-to-isolation response time"
+  ],
+  "limitations": [
+    "ProtectionConfig defaults are software-test thresholds, not approved hardware limits.",
+    "The 1-ms result is one model update interval after a value is supplied.",
+    "Sensor conversion, filtering, scheduler jitter, hardware inhibit, and actuator dynamics are excluded."
+  ],
+  "scenarios": [
+    {
+      "scenario": "cell_overvoltage",
+      "expected_fault": "CELL_1_OVERVOLTAGE",
+      "detected_faults": [
+        "CELL_1_OVERVOLTAGE"
+      ],
+      "state": "FAULT",
+      "modeled_logic_latency_ms": 1.0,
+      "main_contactor_command": false,
+      "precharge_contactor_command": false,
+      "pass": true
+    },
+    {
+      "scenario": "cell_undervoltage",
+      "expected_fault": "CELL_1_UNDERVOLTAGE",
+      "detected_faults": [
+        "CELL_1_UNDERVOLTAGE"
+      ],
+      "state": "FAULT",
+      "modeled_logic_latency_ms": 1.0,
+      "main_contactor_command": false,
+      "precharge_contactor_command": false,
+      "pass": true
+    },
+    {
+      "scenario": "cell_overtemperature",
+      "expected_fault": "CELL_1_OVERTEMPERATURE",
+      "detected_faults": [
+        "CELL_1_OVERTEMPERATURE"
+      ],
+      "state": "FAULT",
+      "modeled_logic_latency_ms": 1.0,
+      "main_contactor_command": false,
+      "precharge_contactor_command": false,
+      "pass": true
+    },
+    {
+      "scenario": "pack_overcurrent",
+      "expected_fault": "PACK_OVERCURRENT",
+      "detected_faults": [
+        "PACK_OVERCURRENT"
+      ],
+      "state": "FAULT",
+      "modeled_logic_latency_ms": 1.0,
+      "main_contactor_command": false,
+      "precharge_contactor_command": false,
+      "pass": true
+    },
+    {
+      "scenario": "invalid_cell_measurement",
+      "expected_fault": "CELL_1_VOLTAGE_INVALID",
+      "detected_faults": [
+        "CELL_1_VOLTAGE_INVALID"
+      ],
+      "state": "FAULT",
+      "modeled_logic_latency_ms": 1.0,
+      "main_contactor_command": false,
+      "precharge_contactor_command": false,
+      "pass": true
+    }
+  ]
+}

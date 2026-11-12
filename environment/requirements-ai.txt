@@ -1,0 +1,3 @@
+# Optional runtime for the supplied Keras SOC model. LFP SOH/RUL forests use
+# the core NumPy runtime and do not require TensorFlow.
+tensorflow-cpu>=2.21,<2.22

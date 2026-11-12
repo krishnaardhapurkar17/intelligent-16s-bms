@@ -1,0 +1,125 @@
+{
+    "project": "Simulation-First 16S Intelligent BMS",
+    "integration_type": "SOC operating scenarios cross-joined with aging scenarios",
+    "record_count": 128,
+    "cell_count": 16,
+    "soc_operating_scenarios": [
+        "LFP_FLAT_REGION",
+        "OCV_CORRECTION_REGION"
+    ],
+    "aging_scenarios": [
+        "SIM-SOH-001_HEALTHY",
+        "SIM-SOH-002_CAPACITY_FAULT",
+        "SIM-SOH-003_RESISTANCE_FAULT",
+        "SIM-SOH-004_COMBINED_FAULT"
+    ],
+    "scenario_summaries": [
+        {
+            "SOH_Scenario": "SIM-SOH-001_HEALTHY",
+            "SOC_Operating_Scenario": "LFP_FLAT_REGION",
+            "Cell_Count": 16,
+            "Capacity_Fault_Count": 0,
+            "Resistance_Fault_Count": 0,
+            "Limiting_Cell": 2,
+            "Limiting_Mechanism": "Capacity",
+            "Minimum_RUL_cycles": 1888.7736975503976
+        },
+        {
+            "SOH_Scenario": "SIM-SOH-001_HEALTHY",
+            "SOC_Operating_Scenario": "OCV_CORRECTION_REGION",
+            "Cell_Count": 16,
+            "Capacity_Fault_Count": 0,
+            "Resistance_Fault_Count": 0,
+            "Limiting_Cell": 2,
+            "Limiting_Mechanism": "Capacity",
+            "Minimum_RUL_cycles": 1888.7736975503976
+        },
+        {
+            "SOH_Scenario": "SIM-SOH-002_CAPACITY_FAULT",
+            "SOC_Operating_Scenario": "LFP_FLAT_REGION",
+            "Cell_Count": 16,
+            "Capacity_Fault_Count": 1,
+            "Resistance_Fault_Count": 0,
+            "Limiting_Cell": 8,
+            "Limiting_Mechanism": "Capacity",
+            "Minimum_RUL_cycles": 400.7932437815588
+        },
+        {
+            "SOH_Scenario": "SIM-SOH-002_CAPACITY_FAULT",
+            "SOC_Operating_Scenario": "OCV_CORRECTION_REGION",
+            "Cell_Count": 16,
+            "Capacity_Fault_Count": 1,
+            "Resistance_Fault_Count": 0,
+            "Limiting_Cell": 8,
+            "Limiting_Mechanism": "Capacity",
+            "Minimum_RUL_cycles": 400.7932437815588
+        },
+        {
+            "SOH_Scenario": "SIM-SOH-003_RESISTANCE_FAULT",
+            "SOC_Operating_Scenario": "LFP_FLAT_REGION",
+            "Cell_Count": 16,
+            "Capacity_Fault_Count": 0,
+            "Resistance_Fault_Count": 1,
+            "Limiting_Cell": 12,
+            "Limiting_Mechanism": "Resistance",
+            "Minimum_RUL_cycles": 1067.8964521463465
+        },
+        {
+            "SOH_Scenario": "SIM-SOH-003_RESISTANCE_FAULT",
+            "SOC_Operating_Scenario": "OCV_CORRECTION_REGION",
+            "Cell_Count": 16,
+            "Capacity_Fault_Count": 0,
+            "Resistance_Fault_Count": 1,
+            "Limiting_Cell": 12,
+            "Limiting_Mechanism": "Resistance",
+            "Minimum_RUL_cycles": 1067.8964521463465
+        },
+        {
+            "SOH_Scenario": "SIM-SOH-004_COMBINED_FAULT",
+            "SOC_Operating_Scenario": "LFP_FLAT_REGION",
+            "Cell_Count": 16,
+            "Capacity_Fault_Count": 1,
+            "Resistance_Fault_Count": 1,
+            "Limiting_Cell": 8,
+            "Limiting_Mechanism": "Capacity",
+            "Minimum_RUL_cycles": 399.61228861341095
+        },
+        {
+            "SOH_Scenario": "SIM-SOH-004_COMBINED_FAULT",
+            "SOC_Operating_Scenario": "OCV_CORRECTION_REGION",
+            "Cell_Count": 16,
+            "Capacity_Fault_Count": 1,
+            "Resistance_Fault_Count": 1,
+            "Limiting_Cell": 8,
+            "Limiting_Mechanism": "Capacity",
+            "Minimum_RUL_cycles": 399.61228861341095
+        }
+    ],
+    "validation": {
+        "Expected 128 integrated records": true,
+        "All 16 cells represented": true,
+        "Four SOH scenarios represented": true,
+        "Two SOC operating scenarios represented": true,
+        "No missing SOC estimates": true,
+        "No missing capacity SOH estimates": true,
+        "No missing resistance estimates": true,
+        "No missing RUL estimates": true,
+        "SOC values within physical limits": true,
+        "Capacity SOH values within physical limits": true,
+        "RUL values non-negative": true,
+        "Capacity fault localized to Cell 8 (LFP_FLAT_REGION)": true,
+        "Resistance fault localized to Cell 12 (LFP_FLAT_REGION)": true,
+        "Combined degradation detected (LFP_FLAT_REGION)": true,
+        "Capacity fault localized to Cell 8 (OCV_CORRECTION_REGION)": true,
+        "Resistance fault localized to Cell 12 (OCV_CORRECTION_REGION)": true,
+        "Combined degradation detected (OCV_CORRECTION_REGION)": true
+    },
+    "all_checks_passed": true,
+    "limitations": [
+        "SOC and SOH/RUL are independently generated scenarios.",
+        "The combined dataset is a scenario cross-product, not a synchronized physical test.",
+        "RUL is based on synthetic linear degradation extrapolation.",
+        "No cell voltage or temperature fields are included in this integration.",
+        "Health thresholds are provisional simulation parameters."
+    ]
+}

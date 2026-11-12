@@ -1,0 +1,188 @@
+{
+  "Diagnostic scenario grid stress evaluation": [
+    "results\\metrics\\lfp_fault_diagnostic_grid.csv",
+    "results\\metrics\\lfp_fault_diagnostic_grid.json"
+  ],
+  "LFP RUL grouped cross-validation": [
+    "results\\metrics\\lfp_rul_group_cross_validation.json"
+  ],
+  "LFP RUL external pack stress test": [
+    "results\\metrics\\lfp_rul_external_pack_validation.json"
+  ],
+  "Precharge R-C assumption model": [
+    "results\\metrics\\precharge_assumption_simulation.csv",
+    "results\\metrics\\precharge_assumption_simulation.json",
+    "docs\\figures\\precharge_assumption_waveforms.png"
+  ],
+  "SOC drive-cycle initialization experiment": [
+    "results\\metrics\\soc_drive_cycle_initialization.csv",
+    "results\\metrics\\soc_drive_cycle_initialization.json",
+    "docs\\figures\\soc_drive_cycle_initialization.png"
+  ],
+  "Software protection fault injection report": [
+    "results\\metrics\\software_fault_injection_report.csv",
+    "results\\metrics\\software_fault_injection_report.json"
+  ],
+  "LFP RUL slope baseline comparison": [
+    "results\\metrics\\lfp_rul_baseline_comparison.json"
+  ],
+  "Desktop AI inference resource profile": [
+    "results\\metrics\\ai_inference_profile.json"
+  ],
+  "Voltage baseline versus multi-signal diagnostic metrics": [
+    "results\\metrics\\lfp_fault_baseline_comparison.json"
+  ],
+  "Active versus passive balancing comparison": [
+    "results\\figures\\lfp_16s_active_passive_balancing.png",
+    "results\\metrics\\lfp_16s_active_passive_balancing.csv",
+    "results\\metrics\\lfp_16s_active_passive_balancing.json"
+  ],
+  "16S pack baseline simulation": [
+    "results\\figures\\lfp_16s_cell_voltages.png",
+    "results\\figures\\lfp_16s_pack_voltage.png",
+    "results\\metrics\\lfp_16s_pack_baseline.csv"
+  ],
+  "Voltage sensor bias injection": [
+    "results\\figures\\lfp_sensor_bias_diagnostic.png",
+    "results\\metrics\\lfp_16s_sensor_bias.csv",
+    "results\\metrics\\lfp_sensor_bias_diagnostics.csv",
+    "results\\metrics\\lfp_sensor_bias_summary.json"
+  ],
+  "Noisy and missing sensor robustness": [
+    "results\\figures\\lfp_16s_robustness_diagnostics.png",
+    "results\\metrics\\lfp_16s_robustness_results.csv",
+    "results\\metrics\\lfp_16s_robustness_summary.json"
+  ],
+  "Temperature sensor bias and noise injection": [
+    "results\\figures\\lfp_16s_temperature_sensor_faults.png",
+    "results\\metrics\\lfp_16s_temperature_sensor_faults.csv",
+    "results\\metrics\\lfp_16s_temperature_sensor_faults_summary.json"
+  ],
+  "Seeded 16S Monte Carlo validation": [
+    "results\\figures\\lfp_16s_monte_carlo_performance.png",
+    "results\\metrics\\lfp_16s_monte_carlo_metrics.csv",
+    "results\\metrics\\lfp_16s_monte_carlo_runs.csv",
+    "results\\metrics\\lfp_16s_monte_carlo_summary.json"
+  ],
+  "Monte Carlo metric audit": [
+    "results\\metrics\\lfp_16s_monte_carlo_audit.csv",
+    "results\\metrics\\lfp_16s_monte_carlo_audit.json"
+  ],
+  "Seeded simulation reproducibility": [
+    "results\\figures\\lfp_16s_robustness_diagnostics.png",
+    "results\\metrics\\lfp_16s_robustness_results.csv",
+    "results\\metrics\\lfp_16s_robustness_summary.json"
+  ],
+  "16S weak-cell capacity injection": [
+    "results\\figures\\lfp_16s_weak_cell_pack_voltage.png",
+    "results\\figures\\lfp_16s_weak_cell_soc.png",
+    "results\\figures\\lfp_16s_weak_cell_voltage.png",
+    "results\\metrics\\lfp_16s_weak_cell.csv"
+  ],
+  "Baseline voltage deviation diagnostic": [
+    "results\\figures\\lfp_voltage_deviation_diagnostic.png",
+    "results\\metrics\\lfp_voltage_deviation_diagnostics.csv",
+    "results\\metrics\\lfp_voltage_diagnostic_summary.json"
+  ],
+  "Capacity degradation injection and estimate": [
+    "results\\figures\\capacity_degradation_soc.png",
+    "results\\figures\\capacity_degradation_voltage.png",
+    "results\\metrics\\capacity_degradation_comparison.csv"
+  ],
+  "Resistance growth injection and estimate": [
+    "results\\figures\\resistance_fault_comparison.png",
+    "results\\metrics\\resistance_fault_comparison.csv"
+  ],
+  "LF100LA equivalent-circuit simulation": [
+    "results\\figures\\lf100la_ecm_soc.png",
+    "results\\figures\\lf100la_ecm_voltage.png",
+    "results\\metrics\\lf100la_ecm_discharge.csv"
+  ],
+  "LF100LA HPPC experiment": [
+    "results\\figures\\lf100la_hppc_response.png",
+    "results\\metrics\\lf100la_hppc_test.csv"
+  ],
+  "LF100LA combined degradation experiment": [
+    "results\\figures\\combined_degradation_soc.png",
+    "results\\figures\\combined_degradation_voltage.png",
+    "results\\metrics\\combined_degradation_comparison.csv"
+  ],
+  "LF100LA parameter identification": [
+    "results\\metrics\\lf100la_identified_parameters.json"
+  ],
+  "Single-cell discharge model": [
+    "results\\figures\\single_cell_voltage.png",
+    "results\\metrics\\single_cell_discharge.csv"
+  ],
+  "Combined-fault localization and explicit unknown result": [
+    "results\\figures\\lfp_16s_combined_resistance_overview.png",
+    "results\\figures\\lfp_16s_combined_voltage_temperature.png",
+    "results\\metrics\\lfp_16s_combined_fault_diagnostics.csv",
+    "results\\metrics\\lfp_16s_combined_fault_summary.json"
+  ],
+  "LFP multi-signal fault-isolation experiment": [
+    "results\\figures\\lfp_16s_fault_isolation.png",
+    "results\\metrics\\lfp_16s_fault_isolation.csv",
+    "results\\metrics\\lfp_16s_fault_isolation_summary.json"
+  ],
+  "Temperature variation diagnostics": [
+    "results\\figures\\lfp_16s_temperature_diagnostic.png",
+    "results\\metrics\\lfp_16s_temperature_diagnostics.csv",
+    "results\\metrics\\lfp_16s_temperature_summary.json"
+  ],
+  "SOC estimator scenarios and metrics": [
+    "results\\figures\\lfp_16s_soc_error.png",
+    "results\\figures\\lfp_16s_soc_estimation.png",
+    "results\\metrics\\lfp_16s_soc_estimation.csv",
+    "results\\metrics\\lfp_16s_soc_metrics.csv"
+  ],
+  "LFP coulomb-counting and OCV SOC fusion": [
+    "results\\figures\\lfp_16s_ocv_fusion_lfp_flat_region.png",
+    "results\\figures\\lfp_16s_ocv_fusion_ocv_correction_region.png",
+    "results\\metrics\\lfp_16s_ocv_soc_fusion.csv",
+    "results\\metrics\\lfp_16s_ocv_soc_fusion_metrics.csv"
+  ],
+  "SOH estimator scenarios and metrics": [
+    "results\\figures\\sim-soh-001_healthy_capacity_soh.png",
+    "results\\figures\\sim-soh-001_healthy_resistance_growth.png",
+    "results\\figures\\sim-soh-002_capacity_fault_capacity_soh.png",
+    "results\\figures\\sim-soh-002_capacity_fault_resistance_growth.png",
+    "results\\figures\\sim-soh-003_resistance_fault_capacity_soh.png",
+    "results\\figures\\sim-soh-003_resistance_fault_resistance_growth.png",
+    "results\\figures\\sim-soh-004_combined_fault_capacity_soh.png",
+    "results\\figures\\sim-soh-004_combined_fault_resistance_growth.png",
+    "results\\metrics\\lfp_16s_soh_estimation.csv",
+    "results\\metrics\\lfp_16s_soh_summary.csv"
+  ],
+  "RUL estimator scenarios and metrics": [
+    "results\\figures\\sim-rul-001_healthy_capacity_aging.png",
+    "results\\figures\\sim-rul-001_healthy_resistance_aging.png",
+    "results\\figures\\sim-rul-001_healthy_rul.png",
+    "results\\figures\\sim-rul-002_capacity_aging_capacity_aging.png",
+    "results\\figures\\sim-rul-002_capacity_aging_resistance_aging.png",
+    "results\\figures\\sim-rul-002_capacity_aging_rul.png",
+    "results\\figures\\sim-rul-003_resistance_aging_capacity_aging.png",
+    "results\\figures\\sim-rul-003_resistance_aging_resistance_aging.png",
+    "results\\figures\\sim-rul-003_resistance_aging_rul.png",
+    "results\\figures\\sim-rul-004_combined_aging_capacity_aging.png",
+    "results\\figures\\sim-rul-004_combined_aging_resistance_aging.png",
+    "results\\figures\\sim-rul-004_combined_aging_rul.png",
+    "results\\metrics\\lfp_16s_rul_estimation.csv",
+    "results\\metrics\\lfp_16s_rul_summary.csv"
+  ],
+  "Protection BDU": [
+    "results\\metrics\\lfp_16s_protection_bdu_results.json"
+  ],
+  "Passive balancing": [
+    "results\\metrics\\lfp_16s_passive_balancing.csv",
+    "results\\metrics\\lfp_16s_passive_balancing_summary.json"
+  ],
+  "Unified diagnostics": [
+    "results\\metrics\\lfp_16s_unified_diagnostics.csv",
+    "results\\metrics\\lfp_16s_unified_summary.json"
+  ],
+  "Supervisory controller": [
+    "results\\metrics\\lfp_16s_supervisory_decisions.csv",
+    "results\\metrics\\lfp_16s_supervisory_summary.json"
+  ]
+}

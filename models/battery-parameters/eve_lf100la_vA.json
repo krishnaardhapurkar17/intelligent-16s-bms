@@ -1,0 +1,44 @@
+
+{
+  "cell": {
+    "manufacturer": "EVE Energy",
+    "model": "LF100LA",
+    "datasheet_version": "A",
+    "chemistry": "LFP",
+    "format": "Prismatic"
+  },
+  "rated_parameters": {
+    "nominal_capacity_Ah": 100.0,
+    "nominal_voltage_V": 3.2,
+    "nominal_energy_Wh": 320.0,
+    "charge_cutoff_voltage_V": 3.65,
+    "discharge_cutoff_voltage_V": 2.5,
+    "standard_charge_rate_C": 0.5,
+    "standard_discharge_rate_C": 0.5,
+    "max_continuous_charge_rate_C": 1.0,
+    "max_continuous_discharge_rate_C": 1.0,
+    "pulse_rate_C": 2.0,
+    "pulse_duration_s": 30,
+    "recommended_soc_min": 0.10,
+    "recommended_soc_max": 0.90,
+    "charging_temperature_min_C": 0,
+    "charging_temperature_max_C": 55,
+    "discharging_temperature_min_C": -20,
+    "discharging_temperature_max_C": 55,
+    "ac_impedance_1kHz_max_ohm": 0.0005
+  },
+  "model_parameters": {
+    "dc_internal_resistance_ohm": null,
+    "ocv_soc_curve": null,
+    "rc_resistance_ohm": null,
+    "rc_capacitance_F": null,
+    "thermal_capacity_J_per_K": null,
+    "thermal_resistance_K_per_W": null
+  },
+  "provenance": {
+    "rated_parameters": "EVE LF100LA Version A product specification",
+    "model_parameters": "Not yet identified",
+    "parameter_status": "Provisional reference specification",
+    "source": "https://thebatteryshop.eu/shop_ordered/92904/pic/EVE_LF100_LA_datasheet.pdf"
+  }
+}

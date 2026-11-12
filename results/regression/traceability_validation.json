@@ -1,0 +1,557 @@
+{
+  "timestamp_utc": "2026-11-12T20:16:28.893547+00:00",
+  "matrix": "docs\\requirements-traceability-matrix.md",
+  "requirements_checked": 33,
+  "requirements_with_all_evidence_present": 33,
+  "scenario_rows_checked": 23,
+  "requirements": [
+    {
+      "requirement_id": "SYS-F-001",
+      "verification_ids": "SIM-001",
+      "evidence_paths": [
+        "models/pack-model/cell_configuration.py",
+        "tests/unit/test_project_interfaces_and_lifecycle.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-002",
+      "verification_ids": "SIM-002 / SIM-003",
+      "evidence_paths": [
+        "models/pack-model/cell_configuration.py",
+        "tests/unit/test_project_interfaces_and_lifecycle.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-003",
+      "verification_ids": "SIM-001",
+      "evidence_paths": [
+        "models/pack-model/lfp_16s_pack_simulation.py",
+        "results/metrics/lfp_16s_pack_baseline.csv"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-004",
+      "verification_ids": "SIM-002 / SIM-003",
+      "evidence_paths": [
+        "models/pack-model/lfp_16s_weak_cell_test.py",
+        "models/pack-model/lf100la_capacity_fault.py",
+        "models/pack-model/lf100la_resistance_fault.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-005",
+      "verification_ids": "SIM-004",
+      "evidence_paths": [
+        "models/pack-model/lfp_16s_temperature_diagnostic.py",
+        "docs/software-interface-boundaries.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-006",
+      "verification_ids": "SIM-005 / SIM-006 / SIM-007",
+      "evidence_paths": [
+        "models/pack-model/lfp_16s_sensor_bias_test.py",
+        "models/pack-model/lfp_16s_robustness_test.py",
+        "tests/unit/test_project_interfaces_and_lifecycle.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-007",
+      "verification_ids": "SIM-001",
+      "evidence_paths": [
+        "software/diagnostics/lfp_voltage_baseline.py",
+        "tests/unit/test_lfp_voltage_baseline.py",
+        "results/metrics/lfp_fault_baseline_comparison.json",
+        "results/metrics/lfp_fault_diagnostic_grid.json"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-008",
+      "verification_ids": "SIM-002 to SIM-008",
+      "evidence_paths": [
+        "models/pack-model/lfp_16s_combined_fault_diagnostic.py",
+        "tests/unit/test_project_interfaces_and_lifecycle.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-009",
+      "verification_ids": "SIM-008",
+      "evidence_paths": [
+        "software/diagnostics/lfp_16s_supervisory_controller.py",
+        "tests/unit/test_lfp_16s_supervisory_fault_injection.py",
+        "docs/software-interface-boundaries.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-010",
+      "verification_ids": "SIM-009",
+      "evidence_paths": [
+        "models/balancing/lfp_16s_passive_balancing.py",
+        "models/balancing/lfp_16s_switched_cap_active_balancing.py",
+        "models/balancing/run_active_passive_comparison.py",
+        "tests/unit/test_lfp_16s_switched_cap_balancing.py",
+        "results/metrics/lfp_16s_active_passive_balancing.json"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-011",
+      "verification_ids": "SIM-010",
+      "evidence_paths": [
+        "models/balancing/lfp_16s_switched_cap_active_balancing.py",
+        "tests/unit/test_lfp_16s_switched_cap_balancing.py",
+        "software/protection/lfp_16s_bdu_balancing_integration.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-012",
+      "verification_ids": "SIM-018",
+      "evidence_paths": [
+        "models/pack-model/lfp_16s_soc_estimator.py",
+        "models/pack-model/lfp_16s_soh_estimator.py",
+        "models/pack-model/lfp_16s_rul_estimator.py",
+        "software/estimation/ai_battery_estimators.py",
+        "models/ai/lfp_soh_ensemble.json",
+        "models/ai/lfp_rul_ensemble.json",
+        "results/metrics/lfp_ai_validation.json",
+        "results/metrics/lfp_ai_protocol_group_validation.json",
+        "results/metrics/lfp_rul_group_cross_validation.json",
+        "results/metrics/lfp_rul_external_pack_validation.json",
+        "docs/decision-log.md"
+      ],
+      "missing_paths": [],
+      "status": "Partially Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-013",
+      "verification_ids": "SIM-012",
+      "evidence_paths": [
+        "tests/regression/run_regression.py",
+        "tests/regression/check_reproducibility.py",
+        "results/regression/regression_report.json",
+        "results/regression/reproducibility_report.json"
+      ],
+      "missing_paths": [],
+      "status": "Partially Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-014",
+      "verification_ids": "SIM-001",
+      "evidence_paths": [
+        "tests/regression/expected_artifacts.json",
+        "tests/regression/run_regression.py",
+        "tests/regression/validate_reports.py",
+        "docs/plot-review-record.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-015",
+      "verification_ids": "SIM-017",
+      "evidence_paths": [
+        "software/interfaces/message_schema.py",
+        "docs/software-interface-boundaries.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-016",
+      "verification_ids": "SIM-017",
+      "evidence_paths": [
+        "tests/unit/test_lfp_16s_bdu_independence.py",
+        "tests/unit/test_lfp_16s_supervisory_fault_injection.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-017",
+      "verification_ids": "SIM-018",
+      "evidence_paths": [
+        "docs/software-interface-boundaries.md",
+        "software/pmu/lfp_16s_state_of_power.py",
+        "software/protection/lfp_16s_state_of_safety.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-018",
+      "verification_ids": "SIM-013",
+      "evidence_paths": [
+        "software/pmu/lfp_16s_pmu.py",
+        "tests/unit/test_lfp_16s_pmu.py",
+        "tests/unit/test_lfp_16s_pmu_integration.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-019",
+      "verification_ids": "SIM-014",
+      "evidence_paths": [
+        "software/diagnostics/lfp_16s_insulation_monitor.py",
+        "tests/unit/test_lfp_16s_insulation_monitor.py",
+        "docs/software-interface-boundaries.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-020",
+      "verification_ids": "SIM-015",
+      "evidence_paths": [
+        "software/diagnostics/lfp_16s_thermal_management.py",
+        "tests/unit/test_lfp_16s_thermal_management.py",
+        "docs/software-interface-boundaries.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-021",
+      "verification_ids": "SIM-016",
+      "evidence_paths": [
+        "software/protection/lfp_16s_bdu_operating_mode.py",
+        "tests/unit/test_lfp_16s_bdu_operating_mode.py",
+        "docs/software-interface-boundaries.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-022",
+      "verification_ids": "SIM-017",
+      "evidence_paths": [
+        "software/protection/lfp_16s_protection_bdu.py",
+        "tests/unit/test_lfp_16s_bdu_independence.py",
+        "tests/regression/validate_reports.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-023",
+      "verification_ids": "SIM-017",
+      "evidence_paths": [
+        "software/interfaces/message_schema.py",
+        "tests/unit/test_project_interfaces_and_lifecycle.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-024",
+      "verification_ids": "SIM-019",
+      "evidence_paths": [
+        "software/interfaces/command_authorization.py",
+        "tests/unit/test_project_interfaces_and_lifecycle.py",
+        "docs/software-interface-boundaries.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-F-025",
+      "verification_ids": "SIM-020",
+      "evidence_paths": [
+        "software/lifecycle/battery_passport.py",
+        "tests/unit/test_project_interfaces_and_lifecycle.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-NF-001",
+      "verification_ids": "Fresh Python 3.13.7 virtual environment, full unit and regression suites",
+      "evidence_paths": [
+        "environment/requirements-core.txt",
+        "docs/clean-environment-verification.md",
+        "results/regression/regression_report.json"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-NF-002",
+      "verification_ids": "SIM-012",
+      "evidence_paths": [
+        "tests/regression/run_regression.py",
+        "tests/regression/check_reproducibility.py",
+        "results/regression/"
+      ],
+      "missing_paths": [],
+      "status": "Partially Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-NF-003",
+      "verification_ids": "112 unit tests after the added assumption-model cases; full regression; coverage report",
+      "evidence_paths": [
+        "software/",
+        "tests/",
+        "results/regression/traceability_validation.json",
+        "results/metrics/unit_test_coverage.json"
+      ],
+      "missing_paths": [],
+      "status": "Partially Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-NF-004",
+      "verification_ids": "Automated report-content validation",
+      "evidence_paths": [
+        "docs/",
+        "results/metrics/",
+        "tests/regression/validate_reports.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-NF-005",
+      "verification_ids": "Documentation review",
+      "evidence_paths": [
+        "docs/"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-NF-006",
+      "verification_ids": "Design review",
+      "evidence_paths": [
+        "docs/assumptions-register.md",
+        "docs/software-interface-boundaries.md",
+        "docs/decision-log.md"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-NF-007",
+      "verification_ids": "Documentation review",
+      "evidence_paths": [
+        "docs/"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    },
+    {
+      "requirement_id": "SYS-NF-008",
+      "verification_ids": "Repeated identical BDU mode sequence plus fault/interlock transition tests",
+      "evidence_paths": [
+        "tests/unit/test_lfp_16s_bdu_operating_mode.py",
+        "tests/unit/test_lfp_16s_bdu_independence.py",
+        "tests/unit/test_lfp_16s_supervisory_fault_injection.py",
+        "tests/unit/test_lfp_16s_passive_balancing.py"
+      ],
+      "missing_paths": [],
+      "status": "Implemented",
+      "passed": true,
+      "unmapped_verification_ids": []
+    }
+  ],
+  "scenarios": [
+    {
+      "verification_id": "SIM-001",
+      "requirements": "SYS-F-001, F-003, F-007, F-014",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-002",
+      "requirements": "SYS-F-002, F-004",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-003",
+      "requirements": "SYS-F-002, F-004, F-012",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-004",
+      "requirements": "SYS-F-005, F-020",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-005",
+      "requirements": "SYS-F-006",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-006",
+      "requirements": "SYS-F-006",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-007",
+      "requirements": "SYS-F-006, F-023",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-008",
+      "requirements": "SYS-F-008, F-009",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-009",
+      "requirements": "SYS-F-010, F-011",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-010",
+      "requirements": "SYS-F-011",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-011",
+      "requirements": "SYS-F-012",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-012",
+      "requirements": "SYS-F-013, SYS-NF-002",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-013",
+      "requirements": "SYS-F-018",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-014",
+      "requirements": "SYS-F-019",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-015",
+      "requirements": "SYS-F-020",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-016",
+      "requirements": "SYS-F-021",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-017",
+      "requirements": "SYS-F-015, F-016, F-022, F-023",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-018",
+      "requirements": "SYS-F-012, F-017",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-019",
+      "requirements": "SYS-F-024",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-020",
+      "requirements": "SYS-F-025",
+      "status": "Verified"
+    },
+    {
+      "verification_id": "SIM-021",
+      "requirements": "SYS-F-021",
+      "status": "Verified \u2014 analytical software model only; not KiCad SPICE or hardware evidence"
+    },
+    {
+      "verification_id": "SIM-022",
+      "requirements": "SYS-F-012, SYS-F-017",
+      "status": "Verified \u2014 synthetic model only; not WLTP/UDDS or independent cell validation"
+    },
+    {
+      "verification_id": "SIM-023",
+      "requirements": "SYS-F-016, SYS-F-021, SYS-F-022",
+      "status": "Verified \u2014 software logic only; no physical sensor, filter, driver, fuse, or contactor latency"
+    }
+  ]
+}

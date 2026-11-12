@@ -1,0 +1,50 @@
+{
+    "experiment": "16S LFP temperature diagnostics",
+    "model_type": "Simplified first-order ECM",
+    "reference_temperature_C": 25.0,
+    "temperature_coefficient_per_C": -0.004,
+    "thermal_deviation_threshold_C": 10.0,
+    "absolute_temperature_threshold_C": 45.0,
+    "resistance_ratio_threshold": 1.2,
+    "voltage_deviation_threshold_mV": 15.0,
+    "temperature_model_status": "Provisional assumption, not calibrated",
+    "limitations": [
+        "The first-order ECM and temperature coefficient are illustrative and uncalibrated.",
+        "Temperature scenarios do not model thermal propagation or runaway.",
+        "Results are simulation diagnostics, not physical validation."
+    ],
+    "scenarios": {
+        "Healthy baseline": {
+            "cell_8_temperature_C": 25.0,
+            "cell_8_raw_R0_mOhm": 0.498363533395223,
+            "cell_8_compensated_R0_mOhm": 0.498363533395223,
+            "cell_8_voltage_deviation_mV": 0.0,
+            "cell_8_thermal_warning": false,
+            "cell_8_classification": "No anomaly detected"
+        },
+        "Cell 8 at 40C": {
+            "cell_8_temperature_C": 40.0,
+            "cell_8_raw_R0_mOhm": 0.4683635333952263,
+            "cell_8_compensated_R0_mOhm": 0.49825907808002795,
+            "cell_8_voltage_deviation_mV": -2.9999999999996696,
+            "cell_8_thermal_warning": true,
+            "cell_8_classification": "Thermal warning"
+        },
+        "Cell 8 at 50C": {
+            "cell_8_temperature_C": 50.0,
+            "cell_8_raw_R0_mOhm": 0.44836353339522406,
+            "cell_8_compensated_R0_mOhm": 0.4981817037724712,
+            "cell_8_voltage_deviation_mV": -4.999999999999893,
+            "cell_8_thermal_warning": true,
+            "cell_8_classification": "Thermal warning"
+        },
+        "Distributed temperature": {
+            "cell_8_temperature_C": 27.0,
+            "cell_8_raw_R0_mOhm": 0.49436353339522343,
+            "cell_8_compensated_R0_mOhm": 0.4983503360838946,
+            "cell_8_voltage_deviation_mV": 0.09999999999976694,
+            "cell_8_thermal_warning": false,
+            "cell_8_classification": "No anomaly detected"
+        }
+    }
+}

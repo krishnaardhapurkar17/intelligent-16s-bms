@@ -1,0 +1,32 @@
+.venv/
+.venv*/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+.tmp/
+results/raw/
+.env
+
+# Downloaded battery datasets can exceed 100 GiB; keep raw data local.
+datasets/*
+!datasets/README.md
+/AI models/
+
+# Generated simulation figures
+results/figures/
+
+# KiCad local settings, backups, and autosave history
+*.kicad_prl
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_pro-bak
+*.lck
+**/.history/
+
+# Generated inspection output
+*.inspect.ndjson

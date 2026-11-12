@@ -1,0 +1,7 @@
+Scenario,Runs,Resistance_Detection_Rate_Percent,Voltage_Bias_Detection_Rate_Percent,Temperature_Bias_Detection_Rate_Percent,Sensor_Data_Fault_Detection_Rate_Percent,Healthy_False_Positive_Rate_Percent,Mean_Resistance_Estimation_Error_mOhm
+SIM-018A Healthy noisy pack,100,,,,,0.0,
+SIM-018B SOC imbalance,100,,,,,,
+SIM-018C Temperature variation,100,,,,,,
+SIM-018D Resistance fault,100,100.0,,,,,0.010209780017548763
+SIM-018E Multiple faults,100,100.0,100.0,100.0,,,0.009847364024592267
+SIM-018F Sensor data faults,100,,,,100.0,,

@@ -1,0 +1,14 @@
+{
+  "verification_id": "SIM-012",
+  "scenario": "16S LFP robustness and disturbance testing",
+  "timestamp_utc": "2026-11-12T20:14:09.625450+00:00",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "numpy_version": "2.5.4",
+  "random_seed": 2026,
+  "model_version_sha256": "fe65397bd79001e3358296b0a07a2982a9cc0a6dc17e296b138f7079e460e361",
+  "identical_outputs": true,
+  "output_hashes": {
+    "results\\metrics\\lfp_16s_robustness_results.csv": "0188c819aff2fd7e68082e313da3c11a8969a0eb19eae0eecf0ed1af41150e0d",
+    "results\\metrics\\lfp_16s_robustness_summary.json": "fbbab02de987e400674fc1de95e68e57b2544d555595c71e37849c3e894eb85b"
+  }
+}

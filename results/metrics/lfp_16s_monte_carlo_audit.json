@@ -1,0 +1,36 @@
+{
+    "experiment": "Monte Carlo diagnostic metric audit",
+    "healthy_scenario": {
+        "resistance_false_positive_rate_percent": 0.0,
+        "voltage_alarm_rate_percent": 0.0,
+        "temperature_false_positive_rate_percent": 0.0,
+        "overall_channel_false_positive_rate_percent": 0.0,
+        "runs_with_any_alarm_percent": 0.0
+    },
+    "soc_imbalance_scenario": {
+        "cell8_voltage_alarm_rate_percent": 100.0,
+        "resistance_false_positive_rate_percent": 0.0,
+        "temperature_false_positive_rate_percent": 0.0,
+        "interpretation": "A voltage deviation under SOC imbalance is an unresolved operating-condition anomaly, not proof of a faulty cell or sensor."
+    },
+    "temperature_variation_scenario": {
+        "temperature_alarm_rate_percent": 0.0
+    },
+    "injected_fault_detection": {
+        "SIM-018D_Cell8_resistance_detection_percent": 100.0,
+        "SIM-018E_Cell8_resistance_detection_percent": 100.0,
+        "SIM-018E_Cell12_voltage_detection_percent": 100.0,
+        "SIM-018E_Cell14_temperature_detection_percent": 100.0
+    },
+    "sensor_data_fault_detection": {
+        "Cell14_missing_voltage_detection_percent": 100.0,
+        "Cell15_invalid_temperature_detection_percent": 100.0,
+        "Cell16_missing_temperature_detection_percent": 100.0
+    },
+    "limitations": [
+        "This audit reuses existing Monte Carlo runs.",
+        "Voltage alarms are not equivalent to confirmed voltage sensor faults.",
+        "The overall false-positive rate is a channel-level rate.",
+        "The results apply only to the existing simulated assumptions."
+    ]
+}

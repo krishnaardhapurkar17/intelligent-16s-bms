@@ -1,0 +1,87 @@
+{
+    "experiment": "16S LFP Monte Carlo robustness evaluation",
+    "runs_per_scenario": 100,
+    "total_runs": 600,
+    "base_random_seed": 20261030,
+    "noise_parameters": {
+        "voltage_noise_std_V": 0.001,
+        "current_noise_std_A": 0.1,
+        "temperature_noise_std_C": 0.25
+    },
+    "diagnostic_thresholds": {
+        "resistance_ratio": 1.2,
+        "voltage_deviation_mV": 15.0,
+        "temperature_deviation_C": 5.0
+    },
+    "metrics": [
+        {
+            "Scenario": "SIM-018A Healthy noisy pack",
+            "Runs": 100,
+            "Resistance_Detection_Rate_Percent": null,
+            "Voltage_Bias_Detection_Rate_Percent": null,
+            "Temperature_Bias_Detection_Rate_Percent": null,
+            "Sensor_Data_Fault_Detection_Rate_Percent": null,
+            "Healthy_False_Positive_Rate_Percent": 0.0,
+            "Mean_Resistance_Estimation_Error_mOhm": null
+        },
+        {
+            "Scenario": "SIM-018B SOC imbalance",
+            "Runs": 100,
+            "Resistance_Detection_Rate_Percent": null,
+            "Voltage_Bias_Detection_Rate_Percent": null,
+            "Temperature_Bias_Detection_Rate_Percent": null,
+            "Sensor_Data_Fault_Detection_Rate_Percent": null,
+            "Healthy_False_Positive_Rate_Percent": null,
+            "Mean_Resistance_Estimation_Error_mOhm": null
+        },
+        {
+            "Scenario": "SIM-018C Temperature variation",
+            "Runs": 100,
+            "Resistance_Detection_Rate_Percent": null,
+            "Voltage_Bias_Detection_Rate_Percent": null,
+            "Temperature_Bias_Detection_Rate_Percent": null,
+            "Sensor_Data_Fault_Detection_Rate_Percent": null,
+            "Healthy_False_Positive_Rate_Percent": null,
+            "Mean_Resistance_Estimation_Error_mOhm": null
+        },
+        {
+            "Scenario": "SIM-018D Resistance fault",
+            "Runs": 100,
+            "Resistance_Detection_Rate_Percent": 100.0,
+            "Voltage_Bias_Detection_Rate_Percent": null,
+            "Temperature_Bias_Detection_Rate_Percent": null,
+            "Sensor_Data_Fault_Detection_Rate_Percent": null,
+            "Healthy_False_Positive_Rate_Percent": null,
+            "Mean_Resistance_Estimation_Error_mOhm": 0.010209780017548763
+        },
+        {
+            "Scenario": "SIM-018E Multiple faults",
+            "Runs": 100,
+            "Resistance_Detection_Rate_Percent": 100.0,
+            "Voltage_Bias_Detection_Rate_Percent": 100.0,
+            "Temperature_Bias_Detection_Rate_Percent": 100.0,
+            "Sensor_Data_Fault_Detection_Rate_Percent": null,
+            "Healthy_False_Positive_Rate_Percent": null,
+            "Mean_Resistance_Estimation_Error_mOhm": 0.009847364024592267
+        },
+        {
+            "Scenario": "SIM-018F Sensor data faults",
+            "Runs": 100,
+            "Resistance_Detection_Rate_Percent": null,
+            "Voltage_Bias_Detection_Rate_Percent": null,
+            "Temperature_Bias_Detection_Rate_Percent": null,
+            "Sensor_Data_Fault_Detection_Rate_Percent": 100.0,
+            "Healthy_False_Positive_Rate_Percent": null,
+            "Mean_Resistance_Estimation_Error_mOhm": null
+        }
+    ],
+    "limitations": [
+        "Results apply only to the simulated scenarios and assumed noise distributions.",
+        "SOC imbalance is not counted as a confirmed hardware fault.",
+        "Voltage deviation is not equivalent to voltage sensor fault.",
+        "Temperature deviation is not definitive proof of sensor bias.",
+        "The resistance model and OCV relationship are simplified.",
+        "The reported false-positive rate covers resistance and temperature flags in the healthy noisy scenario only.",
+        "These results are not physical battery validation."
+    ]
+}

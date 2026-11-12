@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name "Power") (type "KiCad") (uri "${KICAD_SYMBOL_DIR}/power.kicad_sym") (options "") (descr "KiCad built-in power symbols"))
+  (lib (name "TI") (type "KiCad") (uri "${KIPRJMOD}/TI.kicad_sym") (options "") (descr "Intelligent 16S BMS project symbols"))
+  (lib (name "ADI") (type "KiCad") (uri "${KIPRJMOD}/ADI.kicad_sym") (options "") (descr "Analog Devices active-balancer project symbols"))
+  (lib (name "Wurth") (type "KiCad") (uri "${KIPRJMOD}/Wurth.kicad_sym") (options "") (descr "Wurth transformer symbols for the active-balancer draft"))
+)

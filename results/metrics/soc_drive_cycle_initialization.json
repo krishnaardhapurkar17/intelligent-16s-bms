@@ -1,0 +1,52 @@
+{
+  "evidence_class": "synthetic software-model experiment",
+  "status": "research-only; no standardized drive cycle or independent SOC ground truth",
+  "model_source": "models/battery-parameters/lf100la_ecm_assumptions.json",
+  "model_boundary": "Provisional first-order Thevenin ECM; synthetic current/regen profile; ideal current sensing and rest OCV; no temperature or cell-to-cell variation.",
+  "limitations": [
+    "The current profile is synthetic and is not WLTP/UDDS data.",
+    "ECM parameters and OCV curve are not manufacturer-validated.",
+    "Current sensing and rest OCV are ideal; the experiment is not independent cell validation.",
+    "No temperature dependence, cell variation, sensor error, or physical hardware is modeled."
+  ],
+  "profile": {
+    "name": "deterministic 120-second pulse/regen profile",
+    "standardized_wltp_or_udds": false,
+    "duration_s": 1800,
+    "rest_duration_s": 300,
+    "time_step_s": 1
+  },
+  "ocv_fusion": {
+    "weight": 0.7,
+    "minimum_slope_v_per_soc_percentage_point": 0.0025,
+    "correction_timing": "once, after the 300-second rest"
+  },
+  "scenarios": [
+    {
+      "scenario": "high_soc_observable_ocv",
+      "initial_soc_error_percentage_points": -14.999999999999991,
+      "final_true_soc_percent": 84.16666666666313,
+      "final_coulomb_count_soc_percent": 69.16666666666315,
+      "final_ocv_fused_soc_percent": 79.66666666666316,
+      "final_coulomb_count_error_percentage_points": -14.999999999999991,
+      "final_ocv_fused_error_percentage_points": -4.499999999999971,
+      "rest_ocv_slope_v_per_soc_percentage_point": 0.006000000000000006,
+      "rest_ocv_correction_attempted": true,
+      "rest_ocv_correction_applied": true,
+      "rest_ocv_correction_reason": "OCV_SLOPE_ACCEPTED"
+    },
+    {
+      "scenario": "mid_soc_flat_ocv",
+      "initial_soc_error_percentage_points": 14.999999999999991,
+      "final_true_soc_percent": 44.166666666665385,
+      "final_coulomb_count_soc_percent": 59.16666666666314,
+      "final_ocv_fused_soc_percent": 59.16666666666314,
+      "final_coulomb_count_error_percentage_points": 14.999999999997755,
+      "final_ocv_fused_error_percentage_points": 14.999999999997755,
+      "rest_ocv_slope_v_per_soc_percentage_point": 0.0010000000000000234,
+      "rest_ocv_correction_attempted": true,
+      "rest_ocv_correction_applied": false,
+      "rest_ocv_correction_reason": "OCV_SLOPE_TOO_LOW"
+    }
+  ]
+}

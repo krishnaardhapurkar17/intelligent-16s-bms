@@ -1,0 +1,93 @@
+{
+    "experiment": "16S LFP robustness and disturbance testing",
+    "cell_count": 16,
+    "random_seed": 2026,
+    "voltage_noise_std_V": 0.001,
+    "current_noise_std_A": 0.1,
+    "temperature_noise_std_C": 0.25,
+    "resistance_ratio_threshold": 1.2,
+    "voltage_threshold_mV": 15.0,
+    "temperature_threshold_C": 5.0,
+    "scenarios": {
+        "SIM-018A Healthy with measurement noise": {
+            "measurement_noise_scale": 1.0,
+            "flagged_cells": [],
+            "flagged_cell_count": 0
+        },
+        "SIM-018B Initial SOC imbalance": {
+            "measurement_noise_scale": 1.0,
+            "flagged_cells": [
+                {
+                    "cell": 8,
+                    "classification": "Voltage anomaly - cause unresolved"
+                }
+            ],
+            "flagged_cell_count": 1
+        },
+        "SIM-018C Temperature variation": {
+            "measurement_noise_scale": 1.0,
+            "flagged_cells": [],
+            "flagged_cell_count": 0
+        },
+        "SIM-018D Resistance fault with noise": {
+            "measurement_noise_scale": 1.0,
+            "flagged_cells": [
+                {
+                    "cell": 8,
+                    "classification": "Possible resistance degradation + Voltage anomaly - cause unresolved"
+                }
+            ],
+            "flagged_cell_count": 1
+        },
+        "SIM-018E Multiple faults with noise": {
+            "measurement_noise_scale": 1.0,
+            "flagged_cells": [
+                {
+                    "cell": 8,
+                    "classification": "Possible resistance degradation + Voltage anomaly - cause unresolved"
+                },
+                {
+                    "cell": 12,
+                    "classification": "Voltage anomaly - cause unresolved"
+                },
+                {
+                    "cell": 14,
+                    "classification": "Temperature anomaly - cause unresolved"
+                }
+            ],
+            "flagged_cell_count": 3
+        },
+        "SIM-018F Missing and invalid sensors": {
+            "measurement_noise_scale": 1.0,
+            "flagged_cells": [
+                {
+                    "cell": 14,
+                    "classification": "Missing voltage channel"
+                },
+                {
+                    "cell": 15,
+                    "classification": "Invalid temperature measurement"
+                },
+                {
+                    "cell": 16,
+                    "classification": "Missing temperature channel"
+                }
+            ],
+            "flagged_cell_count": 3
+        },
+        "SIM-018G Twofold sensor-noise shift": {
+            "measurement_noise_scale": 2.0,
+            "flagged_cells": [],
+            "flagged_cell_count": 0
+        }
+    },
+    "limitations": [
+        "Simplified linear OCV-SOC approximation.",
+        "Provisional temperature coefficient.",
+        "No electrochemical thermal dynamics.",
+        "Resistance estimation uses a small number of current transitions.",
+        "SOC imbalance can cause voltage anomalies without cell degradation.",
+        "Voltage anomalies alone do not establish physical fault type.",
+        "Thresholds are not calibrated against experimental battery data."
+    ]
+}

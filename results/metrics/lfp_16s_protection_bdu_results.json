@@ -1,0 +1,578 @@
+{
+    "project": "Simulation-First 16S Intelligent BMS",
+    "test": "Protection and BDU State Machine",
+    "thresholds": {
+        "cell_uv_v": 2.0,
+        "cell_ov_v": 3.6,
+        "pack_oc_a": 100.0,
+        "cell_ot_c": 65.0,
+        "precharge_delta_v": 2.0,
+        "precharge_timeout_s": 5.0
+    },
+    "results": [
+        {
+            "scenario": "SIM-BDU-001_NORMAL_STARTUP",
+            "final_state": "CLOSED",
+            "fault_latched": false,
+            "fault_history": [],
+            "steps": [
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "CLOSED",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": true,
+                        "precharge_contactor_command": false,
+                        "charge_enable": true,
+                        "discharge_enable": true
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                }
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-002_CELL_UNDERVOLTAGE",
+            "final_state": "FAULT",
+            "fault_latched": true,
+            "fault_history": [
+                "CELL_8_UNDERVOLTAGE"
+            ],
+            "steps": [
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "CLOSED",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": true,
+                        "precharge_contactor_command": false,
+                        "charge_enable": true,
+                        "discharge_enable": true
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "FAULT",
+                    "fault_latched": true,
+                    "active_faults": [
+                        "CELL_8_UNDERVOLTAGE"
+                    ],
+                    "fault_history": [
+                        "CELL_8_UNDERVOLTAGE"
+                    ],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": false,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                }
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-003_CELL_OVERVOLTAGE",
+            "final_state": "FAULT",
+            "fault_latched": true,
+            "fault_history": [
+                "CELL_8_OVERVOLTAGE"
+            ],
+            "steps": [
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "CLOSED",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": true,
+                        "precharge_contactor_command": false,
+                        "charge_enable": true,
+                        "discharge_enable": true
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "FAULT",
+                    "fault_latched": true,
+                    "active_faults": [
+                        "CELL_8_OVERVOLTAGE"
+                    ],
+                    "fault_history": [
+                        "CELL_8_OVERVOLTAGE"
+                    ],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": false,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                }
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-004_PACK_OVERCURRENT",
+            "final_state": "FAULT",
+            "fault_latched": true,
+            "fault_history": [
+                "PACK_OVERCURRENT"
+            ],
+            "steps": [
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "CLOSED",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": true,
+                        "precharge_contactor_command": false,
+                        "charge_enable": true,
+                        "discharge_enable": true
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "FAULT",
+                    "fault_latched": true,
+                    "active_faults": [
+                        "PACK_OVERCURRENT"
+                    ],
+                    "fault_history": [
+                        "PACK_OVERCURRENT"
+                    ],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": false,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                }
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-005_CELL_OVERTEMPERATURE",
+            "final_state": "FAULT",
+            "fault_latched": true,
+            "fault_history": [
+                "CELL_8_OVERTEMPERATURE"
+            ],
+            "steps": [
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "CLOSED",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": true,
+                        "precharge_contactor_command": false,
+                        "charge_enable": true,
+                        "discharge_enable": true
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "FAULT",
+                    "fault_latched": true,
+                    "active_faults": [
+                        "CELL_8_OVERTEMPERATURE"
+                    ],
+                    "fault_history": [
+                        "CELL_8_OVERTEMPERATURE"
+                    ],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": false,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                }
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-006_PRECHARGE_TIMEOUT",
+            "final_state": "FAULT",
+            "fault_latched": true,
+            "fault_history": [
+                "PRECHARGE_TIMEOUT"
+            ],
+            "steps": [
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "FAULT",
+                    "fault_latched": true,
+                    "active_faults": [],
+                    "fault_history": [
+                        "PRECHARGE_TIMEOUT"
+                    ],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": false,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                }
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-007_PROTECTION_INDEPENDENCE",
+            "final_state": "FAULT",
+            "fault_latched": true,
+            "fault_history": [
+                "PACK_OVERCURRENT"
+            ],
+            "steps": [
+                {
+                    "state": "PRECHARGE",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": true,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "CLOSED",
+                    "fault_latched": false,
+                    "active_faults": [],
+                    "fault_history": [],
+                    "actuator_outputs": {
+                        "main_contactor_command": true,
+                        "precharge_contactor_command": false,
+                        "charge_enable": true,
+                        "discharge_enable": true
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                },
+                {
+                    "state": "FAULT",
+                    "fault_latched": true,
+                    "active_faults": [
+                        "PACK_OVERCURRENT"
+                    ],
+                    "fault_history": [
+                        "PACK_OVERCURRENT"
+                    ],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": false,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": false,
+                    "communication_available": false,
+                    "linux_available": false,
+                    "telemetry_available": false
+                }
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-008_FAULT_LATCH_AND_RECOVERY",
+            "fault_state": "FAULT",
+            "state_after_fault_cleared": "FAULT",
+            "recovery_state": "RECOVERY",
+            "recovery_outputs": {
+                "main_contactor_command": false,
+                "precharge_contactor_command": false,
+                "charge_enable": false,
+                "discharge_enable": false
+            },
+            "final_state": "OPEN",
+            "fault_history": [
+                "PACK_OVERCURRENT"
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-009_INVALID_CURRENT_SENSOR",
+            "final_state": "FAULT",
+            "fault_latched": true,
+            "fault_history": [
+                "PACK_CURRENT_SENSOR_INVALID"
+            ],
+            "steps": [
+                {
+                    "state": "FAULT",
+                    "fault_latched": true,
+                    "active_faults": [
+                        "PACK_CURRENT_SENSOR_INVALID"
+                    ],
+                    "fault_history": [
+                        "PACK_CURRENT_SENSOR_INVALID"
+                    ],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": false,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                }
+            ]
+        },
+        {
+            "scenario": "SIM-BDU-010_MISSING_VOLTAGE_CHANNEL",
+            "final_state": "FAULT",
+            "fault_latched": true,
+            "fault_history": [
+                "INVALID_CELL_VOLTAGE_CHANNEL_COUNT"
+            ],
+            "steps": [
+                {
+                    "state": "FAULT",
+                    "fault_latched": true,
+                    "active_faults": [
+                        "INVALID_CELL_VOLTAGE_CHANNEL_COUNT"
+                    ],
+                    "fault_history": [
+                        "INVALID_CELL_VOLTAGE_CHANNEL_COUNT"
+                    ],
+                    "actuator_outputs": {
+                        "main_contactor_command": false,
+                        "precharge_contactor_command": false,
+                        "charge_enable": false,
+                        "discharge_enable": false
+                    },
+                    "ai_available": true,
+                    "communication_available": true,
+                    "linux_available": true,
+                    "telemetry_available": true
+                }
+            ]
+        }
+    ],
+    "validation": {
+        "Normal startup reaches CLOSED": true,
+        "Undervoltage localized to Cell 8": true,
+        "Overvoltage localized to Cell 8": true,
+        "Overcurrent trips BDU": true,
+        "Overtemperature localized to Cell 8": true,
+        "Precharge timeout trips BDU": true,
+        "Protection works without AI, Linux, communication or telemetry": true,
+        "Fault remains latched after condition clears": true,
+        "Recovery enters RECOVERY state": true,
+        "Recovery returns BDU to OPEN": true,
+        "Invalid current sensor trips BDU": true,
+        "Missing voltage channel trips BDU": true,
+        "Precharge state commands precharge contactor only": true,
+        "Closed state commands main contactor only": true,
+        "Undervoltage commands all actuators off": true,
+        "Overcurrent commands all actuators off": true,
+        "Overtemperature commands all actuators off": true,
+        "Recovery state commands all actuators off": true
+    },
+    "overall": "PASS",
+    "limitations": [
+        "Simulation only; no physical contactor validation.",
+        "Protection thresholds are provisional assumptions.",
+        "Precharge uses a simplified voltage-difference model.",
+        "No contactor weld detection or hardware driver feedback.",
+        "AI and communication independence tested at software logic level.",
+        "No physical contactor switching time or arc model.",
+        "Sensor plausibility and redundant-channel diagnostics are incomplete."
+    ]
+}

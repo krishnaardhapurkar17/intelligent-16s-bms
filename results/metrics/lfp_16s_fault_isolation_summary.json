@@ -1,0 +1,69 @@
+{
+    "experiment": "16S LFP multi-signal fault isolation",
+    "model_type": "Simplified first-order ECM",
+    "cell_count": 16,
+    "healthy_R0_ohm": 0.0005,
+    "degraded_R0_ohm": 0.00075,
+    "sensor_bias_V": -0.03,
+    "current_profile": [
+        [
+            0,
+            0
+        ],
+        [
+            20,
+            25
+        ],
+        [
+            50,
+            0
+        ],
+        [
+            70,
+            50
+        ],
+        [
+            100,
+            0
+        ],
+        [
+            120,
+            100
+        ],
+        [
+            150,
+            0
+        ],
+        [
+            180,
+            0
+        ]
+    ],
+    "resistance_threshold_ratio": 1.2,
+    "voltage_threshold_mV": 15.0,
+    "limitations": [
+        "The first-order ECM and injected sensor bias are simplified simulation assumptions.",
+        "Threshold isolation does not confirm a physical root cause.",
+        "No hardware or field validation is represented."
+    ],
+    "scenarios": {
+        "Healthy": {
+            "cell_8_estimated_R0_mOhm": 0.498363533395223,
+            "cell_8_voltage_deviation_mV": 0.0,
+            "cell_8_resistance_ratio": 1.0,
+            "cell_8_classification": "No anomaly detected"
+        },
+        "Cell 8 resistance growth": {
+            "cell_8_estimated_R0_mOhm": 0.7483635333952265,
+            "cell_8_voltage_deviation_mV": 25.000000000000355,
+            "cell_8_resistance_ratio": 1.5016418402382246,
+            "cell_8_classification": "Possible resistance degradation"
+        },
+        "Cell 8 sensor bias": {
+            "cell_8_estimated_R0_mOhm": 0.498363533395223,
+            "cell_8_voltage_deviation_mV": 29.999999999999805,
+            "cell_8_resistance_ratio": 1.0,
+            "cell_8_classification": "Possible voltage sensor bias"
+        }
+    }
+}

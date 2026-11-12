@@ -1,0 +1,505 @@
+{
+  "dataset": "UConn-ISU-ILCC LFP/graphite RPT",
+  "evaluation": "11-fold leave-one-protocol-group-out cross-validation",
+  "model_parameters": {
+    "seed_base": 20261110,
+    "trees": 64,
+    "max_depth": 8,
+    "min_leaf": 5
+  },
+  "feature_ablation_metrics": {
+    "full_five_features": {
+      "rows": 2855,
+      "mae_cycles": 682.5487033997571,
+      "rmse_cycles": 970.9160700401044,
+      "max_absolute_error_cycles": 4509.821438211121
+    },
+    "capacity_and_causal_fade": {
+      "rows": 2855,
+      "mae_cycles": 650.3849215249808,
+      "rmse_cycles": 943.3356382788662,
+      "max_absolute_error_cycles": 4608.444633183717
+    },
+    "capacity_and_resistance": {
+      "rows": 2855,
+      "mae_cycles": 887.9788087275228,
+      "rmse_cycles": 1158.7189397946738,
+      "max_absolute_error_cycles": 4575.696504715724
+    }
+  },
+  "selected_candidate_features": [
+    "cumulative_cycles",
+    "soh_pct",
+    "soh_fade_pct_per_1000_cycles"
+  ],
+  "development_holdout_feature_ablation": {
+    "whole_cell": {
+      "full_five_features": {
+        "mae_cycles": 580.2858336229472,
+        "rmse_cycles": 926.0256079973374,
+        "max_absolute_error_cycles": 4166.10346016203
+      },
+      "capacity_and_causal_fade": {
+        "mae_cycles": 563.8679849680033,
+        "rmse_cycles": 918.6682849038943,
+        "max_absolute_error_cycles": 4003.059369734404
+      },
+      "capacity_and_resistance": {
+        "mae_cycles": 841.6411372227279,
+        "rmse_cycles": 1167.3933647637925,
+        "max_absolute_error_cycles": 3844.6034416491957
+      }
+    },
+    "protocol_group": {
+      "full_five_features": {
+        "mae_cycles": 650.4972571033783,
+        "rmse_cycles": 800.3680046180054,
+        "max_absolute_error_cycles": 2082.0102467724146
+      },
+      "capacity_and_causal_fade": {
+        "mae_cycles": 543.3490939236069,
+        "rmse_cycles": 668.3135476716772,
+        "max_absolute_error_cycles": 1751.7474057283844
+      },
+      "capacity_and_resistance": {
+        "mae_cycles": 912.5552177134747,
+        "rmse_cycles": 1048.736816546641,
+        "max_absolute_error_cycles": 2510.7891768516156
+      }
+    }
+  },
+  "causal_four_rpt_slope_baseline_metrics": {
+    "rows": 2791,
+    "mae_cycles": 1964.1043858230357,
+    "rmse_cycles": 2627.069361530873,
+    "max_absolute_error_cycles": 46542.591439357086
+  },
+  "slope_baseline_usable_rows": 2791,
+  "folds": [
+    {
+      "protocol_group": "1",
+      "train_cells": 58,
+      "held_out_cells": [
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 375.4080861489756,
+          "rmse": 550.4613344218668,
+          "max_absolute_error": 2819.4631766233315,
+          "r2": 0.7743595993643843
+        },
+        "capacity_and_causal_fade": {
+          "mae": 322.74227244074365,
+          "rmse": 425.8971213103694,
+          "max_absolute_error": 1465.0034587625905,
+          "r2": 0.8649257284084435
+        },
+        "capacity_and_resistance": {
+          "mae": 398.8494240110902,
+          "rmse": 596.7522361645467,
+          "max_absolute_error": 2433.688424911983,
+          "r2": 0.734813546595672
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 211,
+        "mae_cycles": 962.6104762003409,
+        "rmse_cycles": 1145.2159629551575,
+        "max_absolute_error_cycles": 2439.9105500992064
+      }
+    },
+    {
+      "protocol_group": "2",
+      "train_cells": 58,
+      "held_out_cells": [
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 529.8088970784519,
+          "rmse": 695.1058959913679,
+          "max_absolute_error": 2115.2046208729166,
+          "r2": 0.7789855696681963
+        },
+        "capacity_and_causal_fade": {
+          "mae": 481.1334334080686,
+          "rmse": 636.2949789541269,
+          "max_absolute_error": 2222.514124153792,
+          "r2": 0.8148022619044363
+        },
+        "capacity_and_resistance": {
+          "mae": 532.0852159137452,
+          "rmse": 718.0394301864013,
+          "max_absolute_error": 2039.1986398504082,
+          "r2": 0.7641611910145776
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 247,
+        "mae_cycles": 1351.351582119773,
+        "rmse_cycles": 1580.6882390399821,
+        "max_absolute_error_cycles": 4152.522570984483
+      }
+    },
+    {
+      "protocol_group": "3",
+      "train_cells": 58,
+      "held_out_cells": [
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 755.180241811507,
+          "rmse": 1033.3063093734058,
+          "max_absolute_error": 2795.4354192115397,
+          "r2": -0.7319246787980587
+        },
+        "capacity_and_causal_fade": {
+          "mae": 672.5192409069722,
+          "rmse": 971.3742544642057,
+          "max_absolute_error": 2784.360675251054,
+          "r2": -0.5305376436592664
+        },
+        "capacity_and_resistance": {
+          "mae": 1077.2658135659465,
+          "rmse": 1258.1939798052235,
+          "max_absolute_error": 2549.519869297763,
+          "r2": -1.5678286728661366
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 129,
+        "mae_cycles": 631.2760729102006,
+        "rmse_cycles": 810.0481508230106,
+        "max_absolute_error_cycles": 1872.1934670140604
+      }
+    },
+    {
+      "protocol_group": "4",
+      "train_cells": 58,
+      "held_out_cells": [
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 696.942056617116,
+          "rmse": 918.8330018459988,
+          "max_absolute_error": 2257.18037232828,
+          "r2": 0.5880152855801655
+        },
+        "capacity_and_causal_fade": {
+          "mae": 694.98576381436,
+          "rmse": 906.0067189303722,
+          "max_absolute_error": 2278.264271377583,
+          "r2": 0.5994370572189931
+        },
+        "capacity_and_resistance": {
+          "mae": 665.9473641308317,
+          "rmse": 771.1994891332489,
+          "max_absolute_error": 1553.3870756021838,
+          "r2": 0.7097706036206182
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 361,
+        "mae_cycles": 2735.3886917586706,
+        "rmse_cycles": 3196.9877036912853,
+        "max_absolute_error_cycles": 6519.626479991233
+      }
+    },
+    {
+      "protocol_group": "5",
+      "train_cells": 58,
+      "held_out_cells": [
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 1120.6522331855062,
+          "rmse": 1534.7807464564178,
+          "max_absolute_error": 4509.821438211121,
+          "r2": 0.47126565900858963
+        },
+        "capacity_and_causal_fade": {
+          "mae": 1152.774449866839,
+          "rmse": 1571.5073501486213,
+          "max_absolute_error": 4608.444633183717,
+          "r2": 0.44565814996545405
+        },
+        "capacity_and_resistance": {
+          "mae": 1524.62500861998,
+          "rmse": 1863.1897809415323,
+          "max_absolute_error": 4575.696504715724,
+          "r2": 0.2207819200705733
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 347,
+        "mae_cycles": 2380.6684622466028,
+        "rmse_cycles": 3742.39594094948,
+        "max_absolute_error_cycles": 46542.591439357086
+      }
+    },
+    {
+      "protocol_group": "6",
+      "train_cells": 58,
+      "held_out_cells": [
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 312.0235309200674,
+          "rmse": 476.5064827711207,
+          "max_absolute_error": 1682.2700511907433,
+          "r2": 0.7760431394719403
+        },
+        "capacity_and_causal_fade": {
+          "mae": 274.8879804662645,
+          "rmse": 452.2190535024642,
+          "max_absolute_error": 1580.712088423954,
+          "r2": 0.7982913804443934
+        },
+        "capacity_and_resistance": {
+          "mae": 425.7950816152745,
+          "rmse": 591.3597244223943,
+          "max_absolute_error": 1580.1032719296181,
+          "r2": 0.6550705868829949
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 151,
+        "mae_cycles": 827.6851067500189,
+        "rmse_cycles": 1010.9126917204272,
+        "max_absolute_error_cycles": 2019.0591336763873
+      }
+    },
+    {
+      "protocol_group": "7",
+      "train_cells": 58,
+      "held_out_cells": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 553.4632010859656,
+          "rmse": 713.4491988573895,
+          "max_absolute_error": 2000.8531576438372,
+          "r2": 0.6243823805808382
+        },
+        "capacity_and_causal_fade": {
+          "mae": 570.9733190909616,
+          "rmse": 725.777462491318,
+          "max_absolute_error": 1822.3602769598638,
+          "r2": 0.6112890252127811
+        },
+        "capacity_and_resistance": {
+          "mae": 781.0436688364147,
+          "rmse": 883.5512871303656,
+          "max_absolute_error": 1722.0912870572133,
+          "r2": 0.42391923526554254
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 274,
+        "mae_cycles": 2346.0577766288866,
+        "rmse_cycles": 2775.0567050537957,
+        "max_absolute_error_cycles": 4771.870665166181
+      }
+    },
+    {
+      "protocol_group": "8",
+      "train_cells": 58,
+      "held_out_cells": [
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 534.9256435555907,
+          "rmse": 776.9598626390907,
+          "max_absolute_error": 2538.568402211624,
+          "r2": 0.5840771645176034
+        },
+        "capacity_and_causal_fade": {
+          "mae": 539.2631847589213,
+          "rmse": 764.6107040808095,
+          "max_absolute_error": 2065.3845600952773,
+          "r2": 0.5971936165041003
+        },
+        "capacity_and_resistance": {
+          "mae": 642.5483429531615,
+          "rmse": 800.6924545695247,
+          "max_absolute_error": 2203.2548393519555,
+          "r2": 0.558279994330664
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 182,
+        "mae_cycles": 2448.159012357719,
+        "rmse_cycles": 3059.8824916816866,
+        "max_absolute_error_cycles": 6520.80180116528
+      }
+    },
+    {
+      "protocol_group": "9",
+      "train_cells": 58,
+      "held_out_cells": [
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 533.6199921881235,
+          "rmse": 673.4891822592058,
+          "max_absolute_error": 1832.052832245643,
+          "r2": 0.636222133188282
+        },
+        "capacity_and_causal_fade": {
+          "mae": 366.70931267977187,
+          "rmse": 450.2311881948758,
+          "max_absolute_error": 1106.7801697746827,
+          "r2": 0.8374278403451908
+        },
+        "capacity_and_resistance": {
+          "mae": 809.916488147814,
+          "rmse": 961.7127116632535,
+          "max_absolute_error": 2595.9329182809915,
+          "r2": 0.2582360269587274
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 338,
+        "mae_cycles": 1844.014962739902,
+        "rmse_cycles": 2223.618175256319,
+        "max_absolute_error_cycles": 4078.1295997018897
+      }
+    },
+    {
+      "protocol_group": "10",
+      "train_cells": 58,
+      "held_out_cells": [
+        "56",
+        "57",
+        "58",
+        "59",
+        "60",
+        "61"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 836.8398223503933,
+          "rmse": 1173.8108305789713,
+          "max_absolute_error": 3169.8362055250313,
+          "r2": 0.6076482397948397
+        },
+        "capacity_and_causal_fade": {
+          "mae": 806.1507300669657,
+          "rmse": 1128.8094261822728,
+          "max_absolute_error": 3264.9665634720805,
+          "r2": 0.6371554240710149
+        },
+        "capacity_and_resistance": {
+          "mae": 1256.094399408289,
+          "rmse": 1544.857960791588,
+          "max_absolute_error": 3007.744367725902,
+          "r2": 0.3203951165622949
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 423,
+        "mae_cycles": 2248.5220807755127,
+        "rmse_cycles": 2810.5045506475412,
+        "max_absolute_error_cycles": 18634.76517243603
+      }
+    },
+    {
+      "protocol_group": "11",
+      "train_cells": 60,
+      "held_out_cells": [
+        "62",
+        "63",
+        "64",
+        "65"
+      ],
+      "model_metrics": {
+        "full_five_features": {
+          "mae": 1005.7656368606549,
+          "rmse": 1164.7365735111393,
+          "max_absolute_error": 2196.7275570036954,
+          "r2": -0.7033913321335099
+        },
+        "capacity_and_causal_fade": {
+          "mae": 1029.6195285053961,
+          "rmse": 1207.7073751875894,
+          "max_absolute_error": 2562.7466023169427,
+          "r2": -0.8313967713165953
+        },
+        "capacity_and_resistance": {
+          "mae": 1228.5492874108297,
+          "rmse": 1325.870695455099,
+          "max_absolute_error": 2166.4781622777227,
+          "r2": -1.2072999380501623
+        }
+      },
+      "slope_baseline_metrics": {
+        "rows": 128,
+        "mae_cycles": 2048.0600179810053,
+        "rmse_cycles": 2425.5186851220956,
+        "max_absolute_error_cycles": 4244.413312959119
+      }
+    }
+  ],
+  "limitations": [
+    "Each fold excludes every cell and row from its held-out protocol group during fitting.",
+    "This cross-validation uses the same source dataset used to develop the model and is not an external final test.",
+    "The whole-cell and protocol-group feature ablations reuse prior development holdouts and are not new test evidence.",
+    "The slope baseline is scored only where a positive past-only capacity fade rate is available.",
+    "End of life is observed 80% reference capacity, not prospective field lifetime.",
+    "Model output remains research-only and must not control battery protection."
+  ],
+  "status": "RESEARCH_ONLY"
+}

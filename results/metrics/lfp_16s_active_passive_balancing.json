@@ -1,0 +1,69 @@
+{
+  "status": "RESEARCH_SIMULATION",
+  "topology": "generic shared-capacitor-bank cell selection and equalization abstraction",
+  "comparison": "resistor bleed with matched SOC thresholds and initial state",
+  "configuration": {
+    "cells": 16,
+    "initial_soc_fraction": [
+      0.92,
+      0.84,
+      0.82,
+      0.8,
+      0.79,
+      0.78,
+      0.77,
+      0.76,
+      0.75,
+      0.74,
+      0.73,
+      0.72,
+      0.71,
+      0.7,
+      0.69,
+      0.68
+    ],
+    "capacity_ah": 100.0,
+    "time_step_s": 60.0,
+    "maximum_simulated_hours": 1000.0,
+    "active_max_transfer_current_a": 1.0,
+    "active_equivalent_resistance_ohm": 0.25,
+    "start_delta_soc": 0.01,
+    "stop_delta_soc": 0.005,
+    "max_temperature_c": 45.0,
+    "passive_bleed_resistance_ohm": 100.0
+  },
+  "models": {
+    "active": {
+      "strategy": "shared_capacitor_bank_abstraction",
+      "initial_soc_range_pct": 24.0,
+      "final_soc_range_pct": 0.4999376111056497,
+      "elapsed_hours": 424.25,
+      "delivered_energy_wh": 124.77856599731747,
+      "modeled_loss_energy_wh": 1.764755287240101,
+      "net_charge_change_ah": 0.0,
+      "maximum_temperature_c": 25.000016479659443,
+      "converged_to_0_5_pct_range": true
+    },
+    "passive": {
+      "strategy": "resistor_bleed_passive_baseline",
+      "initial_soc_range_pct": 24.0,
+      "final_soc_range_pct": 0.4999692424479951,
+      "elapsed_hours": 675.1,
+      "delivered_energy_wh": 0.0,
+      "modeled_loss_energy_wh": 429.3348927243517,
+      "net_charge_change_ah": -124.5046696167087,
+      "maximum_temperature_c": 25.232699646222997,
+      "converged_to_0_5_pct_range": true
+    }
+  },
+  "limitations": [
+    "Both strategies use the passive model's illustrative linear SOC-voltage relation, not calibrated LFP OCV data.",
+    "The active stage is a behavioral shared-capacitor charge-transfer abstraction, not a switched circuit or component design.",
+    "The active transfer-current limit and equivalent resistance are assumed, not selected from a rated device.",
+    "No converter switching, capacitor ripple, parasitic, control stability, EMI, or cell electrochemical dynamics are modeled.",
+    "Results compare this one initial SOC vector and ideal charge-only condition; they are not universal efficiency claims."
+  ],
+  "raw_outputs": {
+    "csv": "results\\metrics\\lfp_16s_active_passive_balancing.csv"
+  }
+}

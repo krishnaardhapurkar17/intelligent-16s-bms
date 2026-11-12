@@ -1,0 +1,19 @@
+{
+    "method": "Cell-to-median voltage deviation",
+    "threshold_mV": 15.0,
+    "persistence_samples": 5,
+    "result": "VOLTAGE ANOMALY DETECTED",
+    "localization_status": "DETECTED",
+    "localization_candidates": [
+        8
+    ],
+    "suspected_cell": 8,
+    "detection_time_minutes": 60.083333333333336,
+    "final_largest_deviation_mV": 61.999999999972744,
+    "limitations": [
+        "Provisional threshold",
+        "Single controlled simulated fault",
+        "No sensor noise or initial cell variation",
+        "Voltage anomaly does not uniquely prove capacity degradation"
+    ]
+}

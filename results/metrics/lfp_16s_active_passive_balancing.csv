@@ -1,0 +1,3 @@
+strategy,initial_soc_range_pct,final_soc_range_pct,elapsed_hours,delivered_energy_wh,modeled_loss_energy_wh,net_charge_change_ah,maximum_temperature_c,converged_to_0_5_pct_range
+shared_capacitor_bank_abstraction,24.0,0.4999376111056497,424.25,124.77856599731747,1.764755287240101,0.0,25.000016479659443,True
+resistor_bleed_passive_baseline,24.0,0.4999692424479951,675.1,0.0,429.3348927243517,-124.5046696167087,25.232699646222997,True

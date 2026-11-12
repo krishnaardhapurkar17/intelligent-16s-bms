@@ -1,0 +1,65 @@
+Scenario,Cell,Temperature_C,Temperature_Deviation_C,Estimated_R0_mOhm,Temperature_Factor,Compensated_R0_mOhm,Resistance_Ratio,Voltage_Deviation_mV,Thermal_Warning,Resistance_Anomaly,Voltage_Anomaly,Classification
+Healthy baseline,1,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,2,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,3,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,4,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,5,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,6,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,7,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,8,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,9,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,10,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,11,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,12,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,13,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,14,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,15,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Healthy baseline,16,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,1,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,2,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,3,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,4,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,5,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,6,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,7,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,8,40.0,15.0,0.4683635333952263,0.94,0.49825907808002795,0.9997904033738515,-2.9999999999996696,True,False,False,Thermal warning
+Cell 8 at 40C,9,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,10,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,11,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,12,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,13,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,14,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,15,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 40C,16,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,1,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,2,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,3,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,4,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,5,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,6,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,7,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,8,50.0,25.0,0.44836353339522406,0.9,0.4981817037724712,0.9996351466137319,-4.999999999999893,True,False,False,Thermal warning
+Cell 8 at 50C,9,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,10,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,11,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,12,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,13,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,14,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,15,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Cell 8 at 50C,16,25.0,0.0,0.498363533395223,1.0,0.498363533395223,1.0,0.0,False,False,False,No anomaly detected
+Distributed temperature,1,20.0,-7.5,0.5083635333952263,1.02,0.49839562097571216,1.0000975711558031,1.5000000000000568,False,False,False,No anomaly detected
+Distributed temperature,2,21.0,-6.5,0.5063635333952266,1.016,0.49838930452286073,1.0000848963470985,1.3000000000000789,False,False,False,No anomaly detected
+Distributed temperature,3,22.0,-5.5,0.5043635333952268,1.012,0.4983829381375758,1.0000721213422779,1.100000000000101,False,False,False,No anomaly detected
+Distributed temperature,4,23.0,-4.5,0.5023635333952226,1.008,0.4983765212254192,1.0000592449485215,0.8999999999996788,False,False,False,No anomaly detected
+Distributed temperature,5,24.0,-3.5,0.5003635333952228,1.004,0.4983700531824927,1.0000462659540268,0.6999999999997009,False,False,False,No anomaly detected
+Distributed temperature,6,25.0,-2.5,0.498363533395223,1.0,0.498363533395223,1.0000331831275764,0.4999999999997229,False,False,False,No anomaly detected
+Distributed temperature,7,26.0,-1.5,0.49636353339522327,0.996,0.4983569612401841,1.0000199952181825,0.2999999999997449,False,False,False,No anomaly detected
+Distributed temperature,8,27.0,-0.5,0.49436353339522343,0.992,0.4983503360838946,1.0000067009546802,0.09999999999976694,False,False,False,No anomaly detected
+Distributed temperature,9,28.0,0.5,0.4923635333952236,0.988,0.498343657282615,0.9999932990453198,-0.10000000000021103,False,False,False,No anomaly detected
+Distributed temperature,10,29.0,1.5,0.49036353339522376,0.984,0.498336924182138,0.9999797881773466,-0.300000000000189,False,False,False,No anomaly detected
+Distributed temperature,11,30.0,2.5,0.48836353339522415,0.98,0.4983301361175757,0.9999661670165741,-0.500000000000167,False,False,False,No anomaly detected
+Distributed temperature,12,31.0,3.5,0.4863635333952243,0.976,0.49832329241313966,0.9999524342069424,-0.700000000000145,False,False,False,No anomaly detected
+Distributed temperature,13,32.0,4.5,0.4843635333952245,0.972,0.49831639238191827,0.999938588370071,-0.9000000000001229,False,False,False,No anomaly detected
+Distributed temperature,14,33.0,5.5,0.48236353339522475,0.968,0.4983094353256455,0.9999246281047959,-1.100000000000101,False,False,False,No anomaly detected
+Distributed temperature,15,34.0,6.5,0.4803635333952249,0.964,0.4983024205344657,0.9999105519866964,-1.3000000000000789,False,False,False,No anomaly detected
+Distributed temperature,16,35.0,7.5,0.4783635333952252,0.96,0.49829534728669295,0.9998963585676133,-1.5000000000000568,False,False,False,No anomaly detected

@@ -1,0 +1,6 @@
+scenario,expected_fault,detected_faults,state,modeled_logic_latency_ms,main_contactor_command,precharge_contactor_command,pass
+cell_overvoltage,CELL_1_OVERVOLTAGE,CELL_1_OVERVOLTAGE,FAULT,1.0,False,False,True
+cell_undervoltage,CELL_1_UNDERVOLTAGE,CELL_1_UNDERVOLTAGE,FAULT,1.0,False,False,True
+cell_overtemperature,CELL_1_OVERTEMPERATURE,CELL_1_OVERTEMPERATURE,FAULT,1.0,False,False,True
+pack_overcurrent,PACK_OVERCURRENT,PACK_OVERCURRENT,FAULT,1.0,False,False,True
+invalid_cell_measurement,CELL_1_VOLTAGE_INVALID,CELL_1_VOLTAGE_INVALID,FAULT,1.0,False,False,True
