@@ -1,8 +1,24 @@
-# Software completion checkpoint — intelligent 16S BMS
+# Project progress checkpoint — intelligent 16S BMS
 
-Updated 10 November 2026. The project remains simulation-first. The user has
-limited the current project scope to software and PCB design; fabrication and
-physical hardware validation are deferred.
+## Current scope/status update — 13 November 2026
+
+The current request is to complete non-PCB, non-KiCad-simulation work and
+update the progress records. PCB layout, KiCad SPICE simulation, fabrication,
+battery connection and physical validation are not included in this revision.
+
+- Set explicit restrictions: no grounded USB service while the pack is
+  connected; active balancing is deferred from the build/procurement baseline;
+  external pack power-stage components remain unselected; physical IMD/HVIL is
+  not implemented.
+- Updated the hardware checklist, design basis, circuit definition, BOM notes,
+  assumptions register, RTM, portfolio register and decision log to match.
+- Refreshed the integrated schematic PDF and reran KiCad ERC without running
+  simulation. ERC reported 0 errors and 0 warnings; four rule classes remain
+  excluded in the KiCad project configuration.
+- No electrical connectivity changes, hardware validation, or KiCad SPICE run
+  are claimed.
+
+The software results below are a historical checkpoint as of 10 November 2026.
 
 ## Completed and verified in this continuation
 
@@ -78,13 +94,16 @@ physical hardware validation are deferred.
    software. The source files remain unmodified; the workbook is a separate
    reconciliation deliverable.
 
-## Deferred by project scope
+## Deferred by project scope at the 10 November checkpoint
 
 - PCB fabrication, physical hardware testing, and Raspberry Pi target-device
   performance measurement are deferred. Simulation does not imply physical or
   safety validation.
-- Hardware-specific balancing topology, CAN physical-layer integration, and
-  component-level protection design remain for the later hardware phase.
+- The later schematic work added an LTC3300-2 active-balancer candidate, but it
+  remains a study and is deferred from the build/procurement baseline.
+- CAN physical-layer integration and component-level external power-stage
+  selection remain unvalidated. Physical IMD/HVIL and PCB work are outside the
+  current revision.
 
 Do not mark remaining requirements complete until the stated evidence and
 acceptance criteria are reviewed.

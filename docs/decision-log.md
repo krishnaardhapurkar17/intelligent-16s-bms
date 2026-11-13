@@ -68,9 +68,73 @@ Evidence and open items: `hardware/design-basis.md` and
 `hardware/circuit-definition.md`; TI's BQ76952 datasheet and TIDA-010208
 reference design. Confirm the controlled LF100LA Version A cell data and load
 profile; complete short-circuit coordination, contactor/precharge sizing,
-schematic, PCB, ERC/DRC and independent review. The switched-capacitor software
-model still has no selected hardware active-balancing topology. No fabricated
-or physically validated design is claimed.
+external power-stage selection, and independent review before any hardware
+release. A 16-channel LTC3300-2/Wurth active-balancer study is now captured in
+the schematic, but is deferred from the build/procurement baseline. No
+fabricated or physically validated design is claimed.
+
+## ADR-007: USB Service Restriction
+
+Status: Accepted for the current unbuilt design revision
+
+Decision: Do not connect grounded USB service equipment while the battery pack
+is connected to the BMS. Live-pack USB isolation redesign is deferred; the
+schematic does not claim an isolated USB service interface.
+
+Rationale: USB ground and shield share the pack-referenced BMS GND/VSS domain.
+USB ESD protection is not galvanic isolation. A restrictive service boundary
+is safer than assuming a grounded host can be connected to an energized pack.
+
+Reopen if live-pack service is required. Add and independently review a
+galvanically isolated interface before making that use case available.
+
+Evidence: `hardware/kicad/controller_16s.kicad_sch`,
+`hardware/requirements-status.md`, and `hardware/README.md`.
+
+## ADR-008: Defer Active-Balancer Hardware
+
+Status: Accepted for the current design/procurement baseline
+
+Decision: Retain the LTC3300-2/Wurth 16-channel circuit as a schematic study
+only. Do not procure or populate the Wurth 750312504 transformer candidate.
+Active balancing is not part of the current build baseline.
+
+Rationale: The transformer documentation excludes transportation applications
+without manufacturer approval. The transformer, power stage, harness
+protection, switching behavior and thermal limits have not been independently
+qualified. The software active-balancing model remains behavioral and does not
+validate this circuit.
+
+Reopen only after written approval for the intended use or selection of a
+reviewed replacement, followed by complete electrical, thermal, harness and
+fail-safe review. BQ76952 passive balancing also remains subject to cell-specific
+configuration review.
+
+Evidence: `hardware/kicad/active_balancer_16s.kicad_sch`,
+`hardware/design-basis.md`, and `hardware/requirements-status.md`.
+
+## ADR-009: Bound Hardware Scope to Design Evidence
+
+Status: Accepted for the current work revision
+
+Decision: Keep the current deliverable to software/design documentation,
+schematic review, BOM status and non-simulation verification artifacts. Do not
+select external pack contactors, fuse, shunt or precharge parts without
+controlled application data. Physical IMD/HVIL, PCB layout, KiCad SPICE
+simulation, fabrication, battery hookup and physical validation are not part
+of this revision.
+
+Rationale: The actual cell lot, vehicle load profile, prospective fault current,
+coil specifications, DC-link capacitance and thermal conditions are not
+controlled inputs. Selecting safety-critical ratings without those inputs
+would create unsupported design claims.
+
+Reopen when the missing application requirements are available and a separate
+hardware/PCB validation scope is authorized. This decision does not imply
+electrical safety or hardware readiness.
+
+Evidence: `hardware/requirements-status.md`,
+`hardware/design-basis.md`, and `docs/requirements-traceability-matrix.md`.
 
 ## ADR-003: Active Balancing Software Abstraction
 

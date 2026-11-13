@@ -38,28 +38,37 @@ python .\tools\export_kicad_custom_library.py
 ```
 
 KiCad 10.0.6 ERC on the top-level, five-page schematic reports zero errors and
-zero warnings after regeneration. The report lists ignored check classes,
+zero warnings with `--severity-all`. The report lists excluded check classes,
 including SPICE-model issues. ERC checks schematic rules only; it is not
 electrical design approval, circuit simulation, or DRC.
 
 The controller and active-balancer source sheets now include explicit review
 warnings. These are annotation-only changes; no connectivity was changed. The
-checked-in schematic PDF has not been regenerated and does not include those
-annotations; regenerate it in KiCad before using it as a presentation copy.
+schematic PDF and ERC report are refreshed from the integrated schematic.
 
-The KiCad PCB file currently contains imported footprints but no routed copper,
-vias, zones, or DRC evidence. It is an unrouted placement draft, not a completed
-layout. The active-balancer schematic is an LTC3300-2-family draft with a
-16-channel transformer stage. The Wurth transformer candidate is not approved
-for transportation use without manufacturer agreement, and its PCB footprint
-is intentionally unassigned. Contactor coil settings remain provisional;
-cell-specific configuration, external contactor/fuse/precharge selection, PCB
-placement/routing, DRC and independent review remain open. Do not connect a
-battery to this unvalidated draft.
+## Current scope decisions
+
+- Grounded USB service is prohibited while the pack is connected; no live-pack
+  USB isolation redesign is claimed.
+- The active-balancer circuit is a study only and is deferred from the
+  build/procurement baseline. Do not populate or procure its transformer
+  candidate without approval or a reviewed replacement.
+- External pack switching, fuse, shunt and precharge hardware remain
+  unselected. The physical IMD/HVIL, PCB layout, KiCad SPICE simulation,
+  fabrication and all physical testing are outside this revision.
+- The package is not a hardware release. Do not connect a battery to this
+  unvalidated draft.
+
+The KiCad PCB file contains imported footprints but no routed copper, vias,
+zones or DRC evidence. It is an unrouted placement draft, not a completed
+layout. Contactor coil settings remain provisional; cell-specific
+configuration, external contactor/fuse/precharge selection, physical IMD/HVIL
+and independent review remain open if hardware release is later pursued.
 
 The idealized software precharge study is reproducible with
 `tools/run_precharge_assumption_sim.py`; it is not a KiCad SPICE run or
-component-model validation. Circuit-level KiCad simulation remains open.
+component-model validation. KiCad circuit-level simulation remains open and is
+intentionally untouched in this revision.
 
 The software state-machine behavior is described in
 `docs/bdu-state-machine.md`; project status and limitations are summarized in

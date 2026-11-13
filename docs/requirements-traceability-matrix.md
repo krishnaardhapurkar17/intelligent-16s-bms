@@ -125,3 +125,22 @@ implementation, verification method and evidence.
 5. Any requirement change shall be reflected in this matrix and the relevant governance documents.
 6. Simulation evidence shall not be presented as physical hardware validation.
 7. All outstanding actions shall remain open until supporting evidence is reviewed.
+
+## 8. Hardware Design Decision Status
+
+The following decisions bound the current non-PCB, non-simulation revision.
+They are scope decisions and restrictions, not evidence that the hardware is
+safe, verified, or ready to build. Detailed status is maintained in
+`hardware/requirements-status.md`.
+
+| Decision ID | Decision | Current status | Remaining gate |
+|---|---|---|---|
+| DEC-HW-001 | USB GND/shield shares BMS GND/VSS; prohibit grounded USB service while the pack is connected. | Closed as a restrictive operating constraint for this revision; live-pack USB isolation is deferred. | If live-pack service is required, redesign and independently verify the isolation boundary. |
+| DEC-HW-002 | Keep the LTC3300-2/Wurth active-balancer as a schematic study, not a build/procurement feature. | Deferred; do not populate or procure the transformer candidate. | Written approval for intended use or replacement, followed by full power-stage, harness, thermal and fail-safe review. |
+| DEC-HW-003 | Keep contactors, fuse, shunt, cables and precharge hardware external and unselected. | Bounded to schematic architecture; example ratings remain assumptions. | Select and coordinate exact parts only after pack, load, fault-current, coil and DC-link requirements are controlled. |
+| DEC-HW-004 | Treat IMD as a software status abstraction; physical IMD/HVIL are outside this revision. | Out of current scope; no physical capability is claimed. | Define system/vehicle requirements and design physical interfaces before any safety or vehicle claim. |
+| DEC-HW-005 | Defer PCB layout, fabrication, battery connection and physical validation. | Out of current scope. | Requires a separately authorized PCB and hardware-validation phase. |
+| DEC-HW-006 | Preserve provisional cell/current/temperature and component assumptions as non-release inputs. | Open; no exact application-rated power-stage BOM is approved. | Confirm controlled cell data, vehicle load profile, fault current, component ratings and independent review. |
+
+No decision in this table constitutes a KiCad SPICE result, electrical safety
+approval, component qualification, or hardware validation.

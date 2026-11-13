@@ -1,21 +1,24 @@
 # Hardware Design Basis — 16S LFP BMS
 
 Status: preliminary architecture, not fabrication release  
-Scope: KiCad design through schematic, PCB layout, BOM, ERC/DRC and review files.
-Physical fabrication, battery connection, bench testing and vehicle testing are
-out of scope unless the owner later changes that scope.
+Current scope: software/design documentation, schematic review, BOM status,
+non-simulation verification artifacts and portfolio evidence. PCB layout,
+KiCad SPICE simulation, physical fabrication, battery connection, bench
+testing and vehicle testing are excluded from this work revision. No
+fabrication, electrical-safety or vehicle-qualification claim is made.
 
 ## Architecture decision
 
 Use a battery-monitor/control PCB with an external pack power stage. The PCB
-will measure the 16 cell groups, current through an externally rated Kelvin
-shunt, and thermistors; supervise contactor sequencing; and provide an isolated
-CAN interface. Per the owner's request, the candidate active-balancing power
-stage is also intended for this PCB, in a dedicated switching-power area kept
-away from quiet cell-sense routing. Main positive/negative contactors,
-precharge contactor and resistor, pack fuse, current shunt and traction-current
-conductors remain external. This keeps pack current out of the control PCB and
-permits those parts to be selected from the final load and cell specifications.
+draft measures 16 cell groups, current through an externally rated Kelvin
+shunt, and thermistors; supervises contactor sequencing; and provides an
+isolated CAN interface. The active-balancing circuit remains a schematic
+candidate but is deferred from the current build/procurement baseline because
+its transformer is not approved for transportation use. Main
+positive/negative contactors, precharge contactor and resistor, pack fuse,
+current shunt and traction-current conductors remain external and unselected.
+This keeps pack current out of the control PCB; it does not make the external
+power stage safe or complete.
 
 The contactor sequence is OFF -> PRECHARGE -> MAIN CONTACTORS -> RUN. A
 hardware-inhibit input from the battery monitor must remove coil enable on a
@@ -25,6 +28,10 @@ output off. The load-side bus is monitored so software can check that
 precharge reached its allowed differential before closing the main contactors.
 Precharge timing and voltage thresholds remain unconfigured until load
 capacitance, charger behavior and cell limits are established.
+
+USB GND/shield shares pack-referenced BMS GND/VSS. Grounded USB service is
+prohibited while the pack is connected; a live-pack isolated service interface
+is deferred and not claimed in the current design.
 
 ## Candidate circuit partition
 
@@ -36,7 +43,7 @@ capacitance, charger behavior and cell limits are established.
 | Pack switching | External positive/negative main contactors plus external precharge contactor and resistor | 12-V coil-control interface; TPS1H200A-Q1 protected switches are candidates if coil current is under 1.5 A steady. PCB outputs are control-only. |
 | Current measurement | 100-µΩ external Kelvin shunt target to BQ76952 SRP/SRN filter | Use the TI-recommended 100-Ω/100-nF differential filter. Shunt package, thermal design, pulse rating and thresholds remain to be verified. No high-current copper is routed on this PCB. |
 | Temperature | Three external 10-kΩ NTCs on BQ76952 TS1/TS2/TS3 plus board temperature | Confirm the NTC curve, placement, wiring and thresholds against the selected cell/module. |
-| Active balancing | Three LTC3300-2-family devices with 16 transformer channels, isolated SPI/permit and hardware watchdog pause are captured in the draft schematic | U30/U31/U32 span 6/6/4 cells; target transfer is 1 A maximum, only one channel enabled at once. The BQ76952 passive balance remains supplementary. This is an unvalidated candidate, not an automotive-qualified release design. The selected Wurth 750312504 datasheet states the part is not intended for transportation use without written agreement; replace or obtain approval, verify the power stage, and assign its PCB footprint. |
+| Active balancing | LTC3300-2-family circuit with 16 transformer channels is captured as a schematic study only | Deferred from the build/procurement baseline. Do not populate the Wurth 750312504 candidate without written approval for the intended use or replacement with a reviewed part. BQ76952 passive balancing is the only balancing capability retained in the current baseline; even that configuration requires cell-specific verification. |
 
 ## Selected cell basis and provisional operating envelope
 
@@ -82,18 +89,19 @@ capacitance, charger behavior and cell limits are established.
    voltage-difference thresholds.
 3. Select and calculate the external shunt, fuse, contactors, cable and
    connectors from continuous and fault currents.
-4. Independently review the captured active-balancing circuit. Confirm the
-   official controller reference design, 16S topology, magnetic design, actual
-   transformer use approval/qualification, MOSFET and sense-resistor limits,
-   current limits, thermal behavior, fault response and harness protection.
-   The 1-A-per-cell transfer target is provisional.
+4. Keep active balancing deferred. Only reconsider it after the transformer is
+   approved for the intended use or replaced, and the complete 16S power stage,
+   MOSFET/sense-resistor limits, harness protection, thermal behavior and
+   fail-safe response receive an independent review. The 1-A transfer target
+   remains provisional.
 5. Review BQ76952 cell-tap order, input filtering, unused-pin treatment,
    supplies, thermistor circuits, alert polarity, autonomous protections and
    programmed settings against TI documentation.
-6. Run ERC/DRC and independent schematic/PCB review. A clean CAD check is not
-   evidence of electrical safety, physical function, compliance or EV
-   qualification. No board should be connected to a battery based on this
-   unbuilt design.
+6. PCB layout/DRC, independent hardware review, physical IMD/HVIL implementation,
+   fabrication and physical validation are outside the current scope. A clean
+   schematic ERC is not evidence of electrical safety, physical function,
+   compliance or EV qualification. No board should be connected to a battery
+   based on this unbuilt design.
 
 ## Primary references
 

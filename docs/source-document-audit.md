@@ -1,16 +1,17 @@
 # Source Document Review
 
-Reviewed 10 November 2026. This review covers the six Word baselines and three
-workbooks in `Intelligent_BMS_Word_Documents`. The source files were preserved.
+Reviewed 10 November 2026; follow-up status updated 13 November 2026. This
+review covers the six Word baselines and three workbooks in
+`Intelligent_BMS_Word_Documents`. The source files were preserved.
 
 ## Findings
 
 The charter, system requirements specification, architecture/design document,
 verification/validation plan, execution/release plan, and risk/traceability
 document consistently define a simulation-first 16S BMS. They exclude physical
-testing and unsupported automotive safety or compliance claims. This matches
-the user's scope: PCB design may proceed later, while physical fabrication and
-testing are out of scope.
+testing and unsupported automotive safety or compliance claims. For the
+current revision, PCB layout and KiCad SPICE simulation are also deferred;
+physical fabrication and testing remain out of scope.
 
 The SRS defines SYS-F-001 through SYS-F-025 and SYS-NF-001 through SYS-NF-008.
 The V&V plan defines SIM-001 through SIM-020. Numerical targets are explicitly
@@ -18,11 +19,25 @@ TBD until the operating envelope and baseline are justified; no arbitrary
 acceptance thresholds have been substituted.
 
 The source documents specifically require active balancing to be separate from
-the BQ76952 passive bleed feature. The repository previously modeled only
-passive bleed. A generic shared-capacitor-bank software abstraction and a
-matched-condition passive comparison have now been added. The trade-study
-decision remains provisional because no component selection or switching
-circuit is modeled.
+the BQ76952 passive bleed feature. At the original review, the repository
+modeled only passive bleed; a generic shared-capacitor-bank software
+abstraction and matched-condition comparison were added. Subsequent schematic
+work captured an LTC3300-2/Wurth active-balancer candidate. This candidate is
+now explicitly deferred from the build/procurement baseline because
+transportation-use approval and electrical/thermal validation are absent. The
+software trade study remains behavioral and does not validate the hardware
+circuit.
+
+## Follow-up status — 13 November 2026
+
+The current non-PCB, non-KiCad-simulation scope and decisions are recorded in
+`hardware/requirements-status.md`, `hardware/design-basis.md`,
+`docs/requirements-traceability-matrix.md` and `docs/decision-log.md`.
+Grounded USB service is restricted to pack-disconnected work; external
+high-voltage power-stage parts remain unselected; physical IMD/HVIL, PCB layout
+and physical validation remain outside this revision. The current BOM remains
+a non-procurement draft. The KiCad PDF and ERC report were refreshed, but no
+KiCad SPICE simulation or hardware validation was performed.
 
 ## Workbook and repository mismatches
 

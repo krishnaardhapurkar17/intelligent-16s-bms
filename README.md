@@ -28,6 +28,13 @@ simulation command authorization, and lifecycle event logging/replay are also
 implemented. See `docs/requirements-traceability-matrix.md` for verified gaps;
 the RTM is an engineering worklist, not a certification statement.
 
+The hardware files are a non-release schematic/design study. Grounded USB
+service is prohibited while the pack is connected; the active-balancer is
+deferred from the build/procurement baseline; external high-voltage switching
+components remain unselected; and physical IMD/HVIL, PCB layout and physical
+validation are outside the current scope. Do not connect a battery to the
+draft design.
+
 Reproducible idealized precharge R-C, software fault-injection, and synthetic dynamic-load SOC
 initialization experiments are included. They are software-model evidence,
 not KiCad SPICE, component-model, hardware, or vehicle validation. See

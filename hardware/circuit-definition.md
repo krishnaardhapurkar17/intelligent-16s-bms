@@ -1,13 +1,14 @@
 # Hardware Circuit Definition — Draft for KiCad Capture
 
-Revision 0.2 — assumption-based engineering draft, not a fabrication release
+Revision 0.3 — scope-bounded engineering draft, not a fabrication release
 
-This file turns the project's selected 16S EVE LF100LA cell model and software
-BDU sequence into an electrical design basis. The integrated KiCad schematic
-captures the AFE, protected input, dual low-voltage rails, reinforced isolated
-CAN, USB and ADC protection, BDU permit/coil drivers, watchdog fault latch and
-a 16-channel active-balancing candidate. Ratings and release gates below still
-require validation.
+This file turns the project's 16S EVE LF100LA cell-model assumption and
+software BDU sequence into an electrical design basis. The integrated KiCad
+schematic captures the AFE, protected input, dual low-voltage rails, reinforced
+isolated CAN, USB and ADC protection, BDU permit/coil drivers, watchdog fault
+latch and an active-balancing study. This is a documentation/schematic
+portfolio artifact only: PCB layout, KiCad SPICE simulation, hardware hookup,
+fabrication and physical validation are outside the current scope.
 
 ## Pack and operating targets
 
@@ -97,20 +98,22 @@ with the project's 100-Ah Version A model.
 
 ### Active balancing
 
-- Active balancing is required and is targeted for integration on this PCB.
-  The draft sheet now captures three LTC3300-2-family controllers: U30 covers
+- Active balancing is deferred from the current build/procurement baseline.
+  The draft study captures three LTC3300-2-family controllers: U30 covers
   cells 1–6, U31 cells 7–12 and U32 cells 13–16. Sixteen transformer channels
-  transfer energy from a selected cell to its local sub-stack; BQ76952 passive
-  bleed remains a separate supplementary function. Each channel uses a
-  provisional 25-mΩ current-sense resistor and two 100-V MOSFET candidates.
+  are intended to transfer energy from a selected cell to its local sub-stack.
+  The BQ76952 passive-balancing path remains in the baseline draft. Each
+  active-balancer channel uses a provisional 25-mΩ current-sense resistor and
+  two 100-V MOSFET candidates; none of these active-stage values is released.
 - A provisional 1:1 Wurth 750312504 is shown per channel. Its 3.46-µH nominal
   inductance and 10.2-A typical saturation current are candidate data only.
   Its datasheet says it is not intended for transportation applications absent
   Wurth agreement, provides only a 500-VDC insulation test, and requires pad
   pairs 1+2, 4+5, 6+7 and 9+10 to be commoned. The schematic now maps those
-  actual pad numbers; the PCB footprint remains unassigned. Replace or obtain
-  written manufacturer approval and independently review its insulation and
-  thermal suitability before release.
+  actual pad numbers; the PCB footprint remains unassigned. Do not populate or
+  procure this transformer. Replace it or obtain written manufacturer approval
+  for the intended use, then independently review insulation and thermal
+  suitability before reconsidering the feature.
 - The schematic uses 47-µF nominal cell bypass capacitors, with at least
   12-µF effective capacitance at bias/temperature as a provisional design
   target. U30/U31 use the next-higher cell boost rail; U32 uses the
@@ -199,7 +202,9 @@ with the project's 100-Ah Version A model.
   shield pin with 1-MΩ/1-nF HF bond, and removable 120-Ω termination are
   captured. Fit termination only at a physical bus endpoint.
 - Provide a service/programming connector and a safe service mode that cannot
-  energize contactors by itself.
+  energize contactors by itself. USB GND/shield shares pack-referenced BMS
+  GND/VSS; prohibit grounded USB service while the pack is connected. Live-pack
+  USB isolation is deferred and not claimed by this design.
 
 ### Provisional ESP32-S3 signal allocation
 
@@ -259,12 +264,11 @@ boot behavior and firmware before schematic freeze.
    USB/VBUS and ADC clamps, MCU, NTCs, shunt filter, BDU gates, watchdog, smart
    coil switches, feedback and load-side measurement against datasheets.
 3. Finalize project symbols/footprints and assign exact orderable parts.
-4. Place and route a control PCB with cell-input connector separation, analog
-   quiet zone, isolated CAN barrier, RF keepout, connector strain relief and
-   clearly marked high-voltage sense boundaries. High-current path is excluded.
-5. Run KiCad ERC and DRC, resolve all actionable errors, export BOM, schematic
-   PDF, fabrication plots and assembly drawings, then get an independent
-   electrical design review.
+4. PCB placement/routing, creepage/clearance, stackup, DRC, fabrication plots
+   and assembly drawings are outside the current scope.
+5. Keep exact-part sourcing, physical IMD/HVIL implementation and independent
+   hardware review as future release gates. ERC does not approve electrical
+   safety or physical behavior.
 6. Stop at the unbuilt design package per the owner's budget. No physical
    battery hookup, fabricated-board validation or EV qualification is claimed.
 
@@ -278,12 +282,12 @@ boot behavior and firmware before schematic freeze.
 - DC-link capacitance and precharge resistor/timing calculation.
 - Shunt part/thermal analysis and current calibration plan.
 - NTC curve, number/locations, isolation attachment details.
-- Active balancing: a 16-channel LTC3300-2-family candidate is captured, but
-  the controller/transformer qualification, transformer transportation-use
-  approval, footprint, switching/pulse/thermal limits, harness fusing and
-  independent electrical review remain open.
-- PCB manufacturability and safety review; physical validation is excluded by
-  the owner's scope, so the design must remain labeled unvalidated.
+- Active balancing is deferred; transportation-use approval or a replacement,
+  power-stage review, harness protection and thermal validation are all required
+  before it can return to the baseline.
+- Physical IMD/HVIL, PCB manufacturability, independent design review and
+  physical validation are not addressed in this revision. The design must
+  remain labeled unbuilt and unvalidated.
 
 ## Design references
 
