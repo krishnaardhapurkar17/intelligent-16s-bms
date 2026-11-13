@@ -12,13 +12,42 @@ battery connection and physical validation are not included in this revision.
   not implemented.
 - Updated the hardware checklist, design basis, circuit definition, BOM notes,
   assumptions register, RTM, portfolio register and decision log to match.
+- Refreshed the 75-task reconciliation workbook: 40 evidence verified, 25
+  implemented with open evidence, 8 open plan items, and 2 deferred from the
+  current scope.
+- Updated both original 75-task project trackers in place: column H has the
+  reconciled status, column N preserves the original status values, and
+  columns O-Q capture current assessment, evidence, and next action/limitation.
+  Their dashboards now cover all 75 tasks. The GOV-003 workbook retains its
+  historical audit sheets and adds a current-scope/status sheet.
+- Appended dated current-status addenda to the V&V plan, execution/release
+  plan, and risk/traceability plan without replacing their baseline content.
 - Refreshed the integrated schematic PDF and reran KiCad ERC without running
   simulation. ERC reported 0 errors and 0 warnings; four rule classes remain
   excluded in the KiCad project configuration.
 - No electrical connectivity changes, hardware validation, or KiCad SPICE run
   are claimed.
 
-The software results below are a historical checkpoint as of 10 November 2026.
+## Progress-record validation — 13 November 2026
+
+- Both source project-tracker workbooks retain 75 task IDs matching the active
+  reconciliation. Current statuses map to 40 Completed, 25 In Progress,
+  8 Not Started, and 2 Deferred; original statuses remain in column N, and
+  current assessment/evidence/action fields are populated.
+- Dashboard formulas cover all 75 task rows and status dropdowns include the
+  reconciled statuses. The GOV-003 current-scope addendum and its refreshed
+  next-action sequence were checked.
+- The three Word addenda were verified in the DOCX package and document XML.
+  Visual pagination remains unverified because no office renderer is
+  available.
+- `node --check outputs/01a1c0ed-8d57-7813-b837-d1bb78c2df39/build_tracker_reconciliation.mjs`
+  passed; `python tests/regression/validate_traceability.py` reported 33/33
+  evidence mappings present; `git diff --check` passed.
+- The full unit/regression suites were not rerun for this documentation and
+  tracker update. KiCad SPICE simulation remains unrun by request.
+
+The software results below are a historical checkpoint as of 10 November 2026;
+the 13 November tracker/document updates are recorded above.
 
 ## Completed and verified in this continuation
 
@@ -50,14 +79,16 @@ The software results below are a historical checkpoint as of 10 November 2026.
 - Regression metadata captures output-derived configuration snapshots for 9
   stages. This remains partial: many stages do not emit structured runtime
   configuration, and some scenario settings are still implicit in code.
-- Reconciled the two 75-task project trackers in a separate workbook, retaining
-  the originals. Assessment: 39 evidence-verified, 17 implemented with open
-  evidence/limits, 9 open plan items, and 10 hardware tasks deferred. See
+- Reconciled the two 75-task project trackers in a separate workbook. At this
+  10 November checkpoint the assessment was 39 evidence-verified, 17
+  implemented with open evidence/limits, 9 open plan items, and 10 hardware
+  tasks deferred. This count was superseded by the 13 November assessment
+  above. See
   `outputs/01a1c0ed-8d57-7813-b837-d1bb78c2df39/project_tracker_reconciliation.xlsx`.
 - Updated AI model documentation and requirement traceability with current
   RUL evidence and coverage results.
 
-## Latest verification
+## Verification recorded at the 10 November checkpoint
 
 - `.venv-clean`: `python -m pytest tests/unit -q` — 102 passed.
 - `.venv-clean`: `python tests/regression/run_regression.py` — 55 passed,
@@ -89,10 +120,9 @@ The software results below are a historical checkpoint as of 10 November 2026.
 5. Continue targeted testing of lower-covered protection and thermal logic as
    acceptance criteria require; 79.91% line coverage is measured, not a pass
    threshold.
-6. Complete design-owner review of the reconciled tracker workbook and verify
-   Word page layouts / spreadsheet formula recalculation using available office
-   software. The source files remain unmodified; the workbook is a separate
-   reconciliation deliverable.
+6. Complete design-owner review of the reconciled tracker workbook. Visual
+   Word page layout and native spreadsheet formula recalculation remain
+   unverified because no office renderer/calculation engine is available.
 
 ## Deferred by project scope at the 10 November checkpoint
 

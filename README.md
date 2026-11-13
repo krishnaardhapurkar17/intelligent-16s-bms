@@ -27,6 +27,13 @@ and BDU protection logic are present. Transport-independent message contracts,
 simulation command authorization, and lifecycle event logging/replay are also
 implemented. See `docs/requirements-traceability-matrix.md` for verified gaps;
 the RTM is an engineering worklist, not a certification statement.
+The [75-task evidence-based tracker reconciliation](outputs/01a1c0ed-8d57-7813-b837-d1bb78c2df39/project_tracker_reconciliation.xlsx)
+is the detailed cross-project status view. The two supplied project-tracker
+workbooks also now contain current status/evidence fields; their original task
+statuses are retained in a baseline column. The GOV-003 workbook preserves its
+original audit sheets and includes a dated current-scope addendum. The V&V,
+execution, and risk Word plans have dated status addenda; their original
+baseline content remains in place.
 
 The hardware files are a non-release schematic/design study. Grounded USB
 service is prohibited while the pack is connected; the active-balancer is

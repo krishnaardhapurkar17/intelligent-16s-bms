@@ -15,16 +15,15 @@ const verified = (evidence, next = 'Keep evidence linked; rerun the applicable c
   ({ status: 'Evidence verified', evidence, next });
 const partial = (evidence, next) => ({ status: 'Implemented with open evidence', evidence, next });
 const open = (evidence, next) => ({ status: 'Open plan item', evidence, next });
-const deferred = (evidence, next) => ({ status: 'Deferred from software phase', evidence, next });
-const inProgress = (evidence, next) => ({ status: 'In progress — hardware design', evidence, next });
+const deferred = (evidence, next) => ({ status: 'Deferred from current scope', evidence, next });
 
 const decisions = {
   'GOV-001': partial('Intelligent_BMS_Word_Documents/01_Project_Charter.docx; docs/source-document-audit.md', 'Project owner sign-off is still needed; content review alone is not approval.'),
   'GOV-002': partial('Intelligent_BMS_Word_Documents/02_System_Requirements_Specification.docx; docs/requirements-traceability-matrix.md', 'Approve the requirement baseline and resolve TBD operating-envelope criteria.'),
   'GOV-003': verified('docs/requirements-traceability-matrix.md; tests/regression/validate_traceability.py; results/regression/traceability_validation.json'),
-  'GOV-004': verified('docs/decision-log.md (ADR-001 through ADR-005)'),
+  'GOV-004': verified('docs/decision-log.md (ADR-001 through ADR-009)'),
   'GOV-005': partial('docs/assumptions-register.md; docs/source-document-audit.md', 'Convert the reviewed risks into a controlled, scored risk register after the project owner approves a scoring method.'),
-  'GOV-006': open('No Git repository metadata was present in the project folder.', 'Initialize a local Git repository if versioned project history is required.'),
+  'GOV-006': verified('Git repository initialized; main tracks origin/main; README.md', 'Keep future project changes committed and pushed; preserve the dataset exclusion.'),
   'REQ-001': partial('docs/decision-log.md (ADR-001); docs/assumptions-register.md', 'Confirm the target commercial cell and validate parameter applicability; current ECM choice remains provisional.'),
   'REQ-002': open('SRS operating-envelope values remain TBD.', 'Set justified voltage, current, temperature, SOC and load limits for the target cell/pack.'),
   'REQ-003': verified('docs/requirements-traceability-matrix.md; SIM-001 to SIM-020 coverage'),
@@ -76,7 +75,7 @@ const decisions = {
   'PUB-001': verified('README.md'),
   'PUB-002': partial('.gitignore; source provenance and licensing review is not complete.', 'Review licenses for all supplied model/data assets and prepare a clean distributable repository.'),
   'PUB-003': partial('results/figures/; docs/plot-review-record.md', 'Plots are generated and selected plots reviewed; package a curated demo set if publication is planned.'),
-  'PUB-004': open('No release or remote publication was made.', 'Prepare a versioned release only after repository cleanup and owner approval.'),
+  'PUB-004': open('GitHub repository and origin/main are present; no tagged GitHub Release exists, and current working changes are not committed.', 'Create a versioned release only after project review, dataset/license checks, and owner approval.'),
   'PUB-005': open('No social post was made.', 'Draft and publish only if requested by the project owner.'),
   'AUTO-001': verified('docs/software-interface-boundaries.md; docs/assumptions-register.md'),
   'AUTO-002': verified('docs/software-interface-boundaries.md; software/pmu/lfp_16s_state_of_power.py; software/protection/lfp_16s_state_of_safety.py'),
@@ -86,10 +85,21 @@ const decisions = {
   'AUTO-006': verified('tests/regression/regression_summary.txt; subsystem scenario coverage across PMU/BDU/IMU/TMU/diagnostics/balancing'),
 };
 
-const hardwareIds = new Set(['ELE-001','ELE-002','ELE-003','ELE-004','ELE-005','ELE-006','ELE-007','ELE-008','ELE-009','ELE-010']);
+const hardwareDecisions = {
+  'ELE-001': partial('hardware/requirements-status.md; hardware/kicad/afe_16s.kicad_sch', 'Confirm connector pin numbering, mating harness, cell-tap protection and insulation against controlled pack drawings.'),
+  'ELE-002': partial('hardware/requirements-status.md; hardware/kicad/afe_16s.kicad_sch', 'Review the complete BQ76952 supply and cell-input circuit against TI’s controlled reference and final configuration.'),
+  'ELE-003': partial('hardware/requirements-status.md; hardware/circuit-definition.md', 'Select the external shunt from the actual current/fault envelope; verify thermal limits, polarity, calibration and protection settings.'),
+  'ELE-004': partial('hardware/requirements-status.md; hardware/circuit-definition.md', 'Select the NTC curve and verify placement, insulation, conversion and open/short diagnostics against the target cell.'),
+  'ELE-005': partial('hardware/design-basis.md; hardware/requirements-status.md; hardware/kicad/controller_16s.kicad_sch', 'This architecture uses external contactors, not a BQ high-side MOSFET disconnect path. Verify BQ protection alert/latch behavior and the external coil drivers; configure ALERT active-low. Contactors and power-stage ratings remain unselected.'),
+  'ELE-006': partial('hardware/requirements-status.md; hardware/kicad/controller_16s.kicad_sch; docs/decision-log.md (ADR-007)', 'Current schematic uses ESP32-S3 TWAI with isolated CAN, not an MCP2515. Review the intended interface, isolation/layout and orderable variants; grounded USB service is prohibited while the pack is connected.'),
+  'ELE-007': partial('hardware/kicad/integrated_erc.txt; hardware/requirements-status.md', 'ERC reports 0 errors/warnings with --severity-all; four check classes remain excluded. Review/justify exclusions before any hardware release.'),
+  'ELE-008': deferred('hardware/requirements-status.md; hardware/kicad/intelligent_16s_bms.kicad_pcb', 'PCB footprints, stackup and placement/clearance constraints are deferred. The active-balancer transformer has no footprint and is not in the build baseline.'),
+  'ELE-009': deferred('hardware/requirements-status.md; hardware/kicad/intelligent_16s_bms.kicad_pcb', 'PCB routing and DRC are outside this revision; no routed copper or DRC result is claimed.'),
+  'ELE-010': partial('hardware/schematic-pdf/intelligent_16s_bms_system.pdf; hardware/kicad/integrated_erc.txt; hardware/bom/README.md', 'Schematic PDF/ERC are current; BOM remains non-procurement draft. Exact-part approval, PCB/manufacturing outputs and independent release review remain open.'),
+};
 const getDecision = row => {
   const id = row['Task ID'];
-  if (hardwareIds.has(id)) return inProgress('hardware/design-basis.md; hardware/requirements-status.md; docs/decision-log.md (ADR-006)', 'Hardware design has started. Complete the task from selected cell/load ratings and verified schematic/PCB evidence. No fabrication or physical tests are included.');
+  if (hardwareDecisions[id]) return hardwareDecisions[id];
   return decisions[id] || open('No qualifying evidence was mapped from the current repository.', 'Review the task definition and attach specific repository evidence before changing its status.');
 };
 
@@ -107,20 +117,19 @@ const rows = audited.map(a => {
 summary.getRange('A1:H1').merge();
 summary.getRange('A1').values = [['Intelligent BMS — Evidence-Based Tracker Reconciliation']];
 summary.getRange('A2:H2').merge();
-summary.getRange('A2').values = [['Assessment date: 10 Nov 2026 | The two source trackers are preserved; their stale status cells are not treated as evidence.']];
+summary.getRange('A2').values = [['Assessment date: 13 Nov 2026 | Original tracker statuses are retained in column N of the updated source workbooks.']];
 summary.getRange('A4:B4').values = [['Assessment outcome', 'Task count']];
-const categories = ['Evidence verified', 'Implemented with open evidence', 'Open plan item', 'In progress — hardware design', 'Deferred from software phase'];
+const categories = ['Evidence verified', 'Implemented with open evidence', 'Open plan item', 'Deferred from current scope'];
 summary.getRange(`A5:A${4 + categories.length}`).values = categories.map(x => [x]);
 summary.getRange(`B5:B${4 + categories.length}`).formulas = categories.map((_, i) => [`=COUNTIF('Task Reconciliation'!F:F,A${5 + i})`]);
 summary.getRange('D4:H4').merge();
 summary.getRange('D4').values = [['How to read this reconciliation']];
-summary.getRange('D5:H9').merge(true);
-summary.getRange('D5:D9').values = [
+summary.getRange('D5:H8').merge(true);
+summary.getRange('D5:D8').values = [
   ['Evidence verified: repository artifact and/or test evidence exists for the task definition.'],
-  ['Implemented with open evidence: software exists, but scope approval, target-cell validation, or external evidence is still missing.'],
+  ['Implemented with open evidence: relevant work exists, but scope approval, target-cell validation, or external evidence is still missing.'],
   ['Open plan item: no qualifying implementation/approval evidence was found, or a required decision remains unresolved.'],
-  ['In progress — hardware design: architecture work is recorded; each electrical task remains open until its design evidence is created and reviewed.'],
-  ['Deferred from software phase: no current software-phase deferrals.'],
+  ['Deferred from current scope: explicitly excluded from this revision; not complete.'],
 ];
 summary.getRange('A10:H10').merge();
 summary.getRange('A10').values = [['Do not mark a project-plan item complete from its tracker entry alone. Review the evidence and action columns in Task Reconciliation.']];
@@ -136,7 +145,7 @@ summary.getRange('A2:H2').format = { fill: '#DCE6F1', font: { name: 'Aptos', siz
 summary.getRange('A4:B4').format = { fill: '#2F6690', font: { name: 'Aptos', bold: true, color: '#FFFFFF' } };
 summary.getRange('D4:H4').format = { fill: '#2F6690', font: { name: 'Aptos', bold: true, color: '#FFFFFF' } };
 summary.getRange(`A5:B${4 + categories.length}`).format = { fill: '#EEF3F8', font: { name: 'Aptos', size: 11 } };
-summary.getRange('D5:H9').format = { wrapText: true, verticalAlignment: 'center', font: { name: 'Aptos', size: 10 } };
+summary.getRange('D5:H8').format = { wrapText: true, verticalAlignment: 'center', font: { name: 'Aptos', size: 10 } };
 summary.getRange('A10:H10').format = { fill: '#FFF2CC', font: { name: 'Aptos', size: 10, bold: true }, wrapText: true, rowHeight: 32 };
 summary.getRange('A:A').format.columnWidth = 38;
 summary.getRange('B:B').format.columnWidth = 15;

@@ -4,9 +4,9 @@
 
 **Document ID:** GOV-003
 
-**Revision:** 0.1
+**Revision:** 0.2
 
-**Date:** 31 October 2026
+**Date:** 13 November 2026
 
 **Status:** Working Draft
 

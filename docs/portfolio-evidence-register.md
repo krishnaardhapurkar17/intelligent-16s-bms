@@ -6,6 +6,8 @@ and work that remains unverified. The project is simulation-first with a draft
 control-board schematic; it is not a fabricated, safety-certified, or
 vehicle-qualified BMS.
 
+Status reviewed: 13 November 2026.
+
 ## 1. System architecture and schematic
 
 | Checklist item | Current evidence | Status / boundary |
@@ -43,7 +45,7 @@ vehicle-qualified BMS.
 | SOC initialization experiment | `results/metrics/soc_drive_cycle_initialization.json`; `docs/figures/soc_drive_cycle_initialization.png` | Reproducible software-model result. The synthetic profile, ideal sensing, and limitations are stated in the report. It is not a standardized drive-cycle or independent cell-validation result. |
 | NTC-curve simulation, AFE open-wire behavior, fuse/contactor trip curves, short-circuit waveform, hardware timing | None | Not implemented or verified. A selected sensor, AFE model, fuse, contactors, load, and validated acceptance criteria are prerequisites. |
 | KiCad SPICE simulation | None | KiCad is installed, but no schematic simulation has been run. This work revision intentionally leaves simulation untouched; ERC's ignored SPICE-model check is not a simulation result. Do not present the analytical Python precharge model as a KiCad run. |
-| Requirements traceability | `docs/requirements-traceability-matrix.md` | Existing requirements and software scenarios are mapped. New software-model experiments are recorded there; physical evidence remains explicitly open. |
+| Requirements traceability and project tracking | `docs/requirements-traceability-matrix.md`; `outputs/01a1c0ed-8d57-7813-b837-d1bb78c2df39/project_tracker_reconciliation.xlsx` | Requirements and software scenarios are mapped; the 75-task reconciliation is updated to the 13 November scope and evidence state. Physical evidence remains explicitly open. Source tracker workbooks remain preserved snapshots. |
 
 ## Reproduction commands
 
